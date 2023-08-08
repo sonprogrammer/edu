@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html form</title>
+</head>
+<body>
+    <!-- form: 정보를 서버 컴퓨터 쪽에 전달하기위한 Html의 형태 -->
+    <form>
+        <label for="username">이름</label>
+        <input type="text" id="username" name="username" placeholder="put your name on"/>
+        <br>
+        
+        <label for="email">이메일</label>
+        <input type="text" id="email" name="email" placeholder="put your email on" />
+        <br>
+
+        <label for="password">비밀번호</label>
+        <input type="text" id="password" name="password" placeholder="put your password on">
+
+        <p>select your sex</p>
+        <input type="radio" name="gender" value="male" id="option-1">
+        <label for="option-1">male</label>
+
+        <input type="radio" name="gender" value="female" id="option-2">
+        <label for="option-2">female</label>
+
+        <div>
+            <label for="age">select your age on</label>
+            <select name="age" id="age">
+                <option value="age1">18~29</option>
+                <option value="age2">30~50</option>
+                <option value="age3">51~70</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="introduce">자기소개</label>
+            <textarea name="introduce" id="introduce" cols="30" rows="10"></textarea>
+        </div>
+
+        <input type="file">
+    </form>
+</body>
+</html>
