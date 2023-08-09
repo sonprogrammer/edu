@@ -3,9 +3,9 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>쇼핑몰 본문 만들기</title>
+  <title>쇼핑몰 하단 만들기</title>
   
-  <link rel="stylesheet" href="index.css">  
+  <link rel="stylesheet" href="index.css">
   <style>
       /* Default CSS */
 * {
@@ -85,48 +85,92 @@ ol, ul {
 }
 
 #intro nav ul li a {
-    font-size: 20px; 
-    font-weight: bold;
+    font-size: 20px; font-weight: bold;
 }
 
-      #main article{
+
+
+/* Main CSS */
+#main article {
+    width: 50%;
+    height: 320px;
+    
+    float: left;
+}
+
+#main article a {
+    display: block; 
+    
+    width: 100%;
+    height: 100%;
+}
+
+#main article.one {
+    background-color: #532fa1;
+}
+
+#main article.two {
+    background-color: #a44789;
+}
+
+#main article.three {
+    background-color: #3ab6bc;
+}
+
+#main article img {
+    width: 100%;
+}
+
+#main article h2 {
+    color: #fff;
+    font-size: 25px;
+    
+    text-align: center;
+    padding: 10px 0;
+}
+
+#main article.text {
+    width: 100%;
+    height: 66px;
+}
+
+#main article.text p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    
+    padding: 20px 0;
+    
+    border: solid 1px #000;
+}
+
+      #footer{
+          width: 100%;
+          height: 80px;
+          clear: both;
+          background-color: #f9f9f9;
+      }
+      #footer .copyright{
           width: 50%;
-          height: 320px;
           float: left;
       }
-      #main article a{
-          display: block;
-          width: 100%;  /*width,height을 주는 이유는 중앙정렬 시켜야 하기 때문이다. 다른방법으로는 div로 묶어서 div안의 요소를 중앙정렬 시키는 방법임*/
-          height: 100%; /*위 말은 inline요소면 글자크기만큼 너비를 차지해서 중앙정렬이 소용이 없다 그런데 block요소로 만들면 한줄을 다 차지하니깐 그 전체공간에서 글자를 가운데로 옮길수 잇는공간이 나온다는 말임*/
+      #footer .address{
+          width: 50%;
+          float: right;
       }
-
-      #main article.one{
-          background-color: #532fa1;
+      #footer .copyright p{
+          color: #999;
+          font-size: 14px;
+          padding: 32px 0 0 40px;
       }
-      #main article.two{
-          background-color: #a44789;
-      }
-      #main article.three{
-          background-color: #3ab6bc;
-      }
-      #main article h2{
-          color: #fff;
-          font-size: 25px;
-          text-align: center;
-          padding: 10px 0;
-      }
-      #main article.text{
-          width: 100%;
-          height: 66px; 
-      }
-      #main article.text p{
-          text-align: center;
-          font-weight: bold;
-          padding: 20px 0;
-          border: solid 1px #000;
-          font-size: 20px;
+      #footer .address p{
+          color: #999;
+          font-size: 14px;
+          padding: 32px 40px 0 0;
+          text-align: right;
       }
   </style>
+  
 </head>
 <body>
 
@@ -137,7 +181,7 @@ ol, ul {
         <h1>
             <a href="https://academy.elice.io/">엘리스 사전</a>
         </h1>
-        
+
         <nav>
             <ul>
                 <li class="one"><a href="#">캐릭터 소개</a></li>
@@ -212,6 +256,18 @@ ol, ul {
         </article>
 
     </main>
+
+    <footer id="footer">
+
+        <div class="copyright">
+            <p>Copyright © 2016-2018 elice. All rights reserved.</p>
+        </div>
+
+        <div class="address">
+            <p>대전광역시 유성구 문지로 193 KAIST 문지캠퍼스 진리관 T326호</p>
+        </div>
+
+    </footer>
 
   </div>
 
