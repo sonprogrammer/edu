@@ -14,8 +14,8 @@
       }
       #main article a{
           display: block;
-          width: 100%
-          height: 100%
+          width: 100%;  /*width,height을 주는 이유는 중앙정렬 시켜야 하기 때문이다. 다른방법으로는 div로 묶어서 div안의 요소를 중앙정렬 시키는 방법임*/
+          height: 100%; /*위 말은 inline요소면 글자크기만큼 너비를 차지해서 중앙정렬이 소용이 없다 그런데 block요소로 만들면 한줄을 다 차지하니깐 그 전체공간에서 글자를 가운데로 옮길수 잇는공간이 나온다는 말임*/
       }
 
       #main article.one{
