@@ -15,10 +15,29 @@
 
 
 // 구구단 
-for(let i = 2; i < 10; i++) {
-    let result;
-    for(let j = 1; j < 10; j++){
-        result += i +" x "+j +" = " + (i*j);
-    }
-    return result
-}
+// for(let i = 2; i < 10; i++) {
+//     for(let j = 1; j < 10; j++){
+//         document.write(i +" x "+j +" = " + (i*j) + "<br>");
+//     }
+
+// }
+
+
+// 문자열 길이
+
+function addStringLength(a, b) {
+    let lengthA = a.length;
+    let lengthB = b.length;
+
+    return lengthA + lengthB
+
+
+  
+};
+
+
+var inputA = "abcdsafdasfasdf";
+var inputB = "dfdsafasdfe";
+
+
+module.exports = { inputs: [inputA, inputB], func: addStringLength }
