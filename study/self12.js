@@ -100,11 +100,31 @@
 
 
 //각 자리수 반환 함수 만들기
-function getDigits(num) {
-    let result = [];
-    const strNum = String(num);  // 숫자를 문자열로 변환
-    for (let i = 0; i < strNum.length; i++) {
-        result.push(Number(strNum[i]));  // 각 자릿수를 숫자로 변환하여 배열에 추가
+// function getDigits(num) {
+//     let result = [];
+//     const strNum = String(num);  // 숫자를 문자열로 변환
+//     for (let i = 0; i < strNum.length; i++) {
+//         result.push(Number(strNum[i]));  // 각 자릿수를 숫자로 변환하여 배열에 추가
+//     }
+//     return result;
+// }
+
+
+
+// 자리수 배열을 숫자로 되돌리는 함수
+// function makeNumberFromDigits(arr){
+//     return Number(arr.join('')) //join메소드를 사용해 배열 요소를 결합하고 Number를 이용해 문자열을 숫자로 변환함
+// }
+
+
+
+//성인만 출력하기
+function getOnlyAdults(array){
+    let result = []
+    for(let i = 0; i < array.length; i++){
+    if(array[i].age>= 20){
+            result.push(array[i].name)
     }
-    return result;
+    }
+    return result
 }
