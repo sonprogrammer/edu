@@ -25,19 +25,25 @@
 
 // 문자열 길이
 
-function addStringLength(a, b) {
-    let lengthA = a.length;
-    let lengthB = b.length;
+// function addStringLength(a, b) {
+//     let lengthA = a.length;
+//     let lengthB = b.length;
 
-    return lengthA + lengthB
+//     return lengthA + lengthB
 
 
   
-};
+// };
 
 
-var inputA = "abcdsafdasfasdf";
-var inputB = "dfdsafasdfe";
 
-
-module.exports = { inputs: [inputA, inputB], func: addStringLength }
+// 공백제거하기
+function removeBlank(a){
+    let result = ""
+    for(let i = 0; i < a.length; i++){
+        if(a[i] !== " "){
+            result += a[i]
+        }
+    }
+    return result
+}
