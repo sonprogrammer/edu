@@ -96,3 +96,15 @@
 // }
 //     return result
 // }
+
+
+
+//각 자리수 반환 함수 만들기
+function getDigits(num) {
+    let result = [];
+    const strNum = String(num);  // 숫자를 문자열로 변환
+    for (let i = 0; i < strNum.length; i++) {
+        result.push(Number(strNum[i]));  // 각 자릿수를 숫자로 변환하여 배열에 추가
+    }
+    return result;
+}
