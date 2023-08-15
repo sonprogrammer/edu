@@ -56,18 +56,30 @@
 
 
 //약수의 약수
-function solution(data) {
+// function solution(data) {
+//     let answer = []
+//     for(let i =1; i <= data; i++){
+//         let divisor = []
+//         if(data % i === 0){
+//             for(let j = 1; j <= i; j++){
+//                 if(i % j === 0){
+//                     divisor.push(j)
+//                 }
+//             }
+//             answer.push(divisor.join(' ')) //['1', '1 2', '1 2 4'......]
+//         }
+//     }
+//   return answer.join('\n');
+// }
+
+
+// 뒤틀린 구구단 
+function solution() {
     let answer = []
-    for(let i =1; i <= data; i++){
-        let divisor = []
-        if(data % i === 0){
-            for(let j = 1; j <= i; j++){
-                if(i % j === 0){
-                    divisor.push(j)
-                }
-            }
-            answer.push(divisor.join(' ')) //['1', '1 2', '1 2 4'......]
-        }
-    }
-  return answer.join('\n');
-}
+    for(let i = 2; i <=9; i++)
+        for(let j = 1; j <=9; j++)
+            answer.push([i, j, i*j]);
+            return answer.sort((a, b) => a[2] - b[2]).map(item => `${item[0]} * ${item[1]} = ${item[2]}`).join('\n')
+        
+
+  }
