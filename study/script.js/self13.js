@@ -113,6 +113,7 @@ document.querySelector(".left-arrow").onclick = function () {
         iterations: 1,
         fill: "both"
     });
-    prevSlide.classList.add("active");
+    prevSlide.classList.add("active");   
+    
 }
 
