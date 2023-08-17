@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>배경색 바꾸기</title>
+        <style>
+            div {
+                background-color: #ccc;
+                text-align: center;
+                height: 120px;
+                line-height: 120px;
+            }
+
+            .red {
+                background-color: red;
+            }
+
+            .yellow {
+                background-color: gold;
+            }
+
+            .green {
+                background-color: lightgreen;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="red">red</div>
+        <div id="yellow">yellow</div>
+        <div id="green">green</div>
+        <script>
+            var blockOne = document.getElementById("red");
+            var blockTwo = document.getElementById("yellow");
+            var blockThree = document.getElementById("green");
+
+            // blockOne.addEventListener('mouseenter', e => {
+            //     blockOne
+            //         .classList
+            //         .add('red');
+
+            // })
+            // blockTwo.addEventListener('mouseenter', e => {
+            //     blockTwo
+            //         .classList
+            //         .add('yellow');
+            // })
+            // blockThree.addEventListener('mouseenter', e => {
+            //     blockThree
+            //         .classList
+            //         .add('green');
+            // })
+            
+            
+            //forEach써보기
+            let $block = document.querySelectorAll('div')
+
+            $block.forEach(element =>{
+                element.addEventListener('mouseenter', ()=>{
+                    element.classList.add(element.id)
+                })
+            })
+
+        </script>
+    </body>
+    <script src="index.js"></script>
+</html>

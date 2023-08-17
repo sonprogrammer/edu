@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>화면의 상단으로 이동하기</title>
+<style>
+    html, body, div {
+    width: 100%;
+    height: 100%;
+}
+
+.first {
+    background-color: lightpink;
+}
+.second {
+    background-color: magenta;
+}
+
+.third {
+    background-color: purple;
+}
+
+.scroll-top {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 100;
+	background-color: black;
+	width: 50px;
+	height: 50px;
+    
+	border-radius: 50%;
+	border: none;
+	color: #fff;
+}
+
+.scroll-top:hover {
+	cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+  <button class="scroll-top" id="scroll-btn">TOP</button>
+  <div class="first"></div>
+  <div class="second"></div>
+  <div class="third"></div>
+  <script>
+      /*지시사항을 따라 작성해주세요*/
+
+function scrollUp(e) {
+  /*1. 함수를 적용할 target 변수 지정하기*/
+  const target = document.getElementById('scroll-btn')
+  const $second = document.getElementsByClassName('second')[0];//top을 누르면 두번째칸으로 간다
+  const top = $second.offsetTop;
+
+  /*2. 버튼 클릭 시 화면의 최상단으로 이동하기*/
+  target.addEventListener('click', e=>{
+      window.scrollTo({top:top, left: 0, behavior:'smooth'})
+  })
+}
+
+scrollUp("scroll-btn");
+
+  </script>
+</body>
+
+</html>
