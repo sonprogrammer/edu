@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <form id="form">
+            <label>입력</label>
+            <input type="text" id="input">
+            <button type="submit" id="btn">제출</button>
+        </form>
+        <h3 id="answer">답안</h3>
+        <script>
+            const form = document.querySelector('#form');
+            const input = document.querySelector('#input');
+            const answer = document.querySelector('#answer');
+            form.addEventListener('submit', e => {
+                e.preventDefault(); //submit의 디폴트값은 글적고 엔터치면 글이 사라지는건데 그걸 막는거임
+                answer.textContent = input.value;
+                form.reset();   //글자칸에는 없어지게 다시 preventDefault로 해논걸 reset한다는 거임
+            });
+        </script>
+    </body>
+</html>
