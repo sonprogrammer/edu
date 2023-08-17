@@ -8,9 +8,20 @@ const user = {
     age : 27,
     email : 'ods04138@gmail.com',
     address : '천안시',
-    food : ['김치찌개', '제육볶음']
-}
+    food : ['김치찌개', '제육볶음'],
 
+    payment : function(){
+        console.log("결제가 완료 되었습니다!")
+        return this.deliverystart();
+    },
+
+    deliverystart: function(){
+        console.log("배달이 시작되었습니다!")
+    }
+}
+user.payment();
+user.deliverystart();
+// module.exports = user;
 
 console.log(user.name);
 console.log(user.age);
