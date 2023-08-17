@@ -53,7 +53,7 @@
                     .getElementById("targetp")
                     .innerText;
                 let words = txt.split(" ");
-                let size = 8;
+                // let size = 8;
                 let output = "";
                 let replacementword = "";
 
@@ -62,7 +62,7 @@
 
                     // 2. 단어의 길이가 8 이상인 경우 단어를 하이라이트 하세요.
                     if (word.length >= 8) {
-                        replacementword = "<span class = 'lightext'>" + word + "</span>"
+                        replacementword = "<span class = 'lightext'>" + word + "</span>" //span을 준 이유는 띄어쓰기를안하기 위해서
                     } else {
                         replacementword = word;
                     }
