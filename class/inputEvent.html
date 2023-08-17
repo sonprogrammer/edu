@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>출석하기</title>
+    <style>
+        body {
+  background-color:white;
+}
+
+.container{
+  margin: 90px auto;
+  max-width: 340px;
+  border: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.inputWindow input{
+  background-color: #ffffff;
+  height: 40px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+}
+
+.attend {
+  width: 60px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 0px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 15px;
+  background-color: darkorchid;
+}
+    </style>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='inputWindow'>
+        <input type="text" name="name" placeholder="이름을 입력하세요.">
+        <button class="attend">출석</button>
+      </div>
+      <h3>출석부</h3>
+      <p style="text-align: center" id="attendee"></p>
+    </div>
+  </body>
+<script>
+    /*지시사항을 따라 작성해주세요*/
+
+/*1. index.html 파일을 참고해 주어진 변수들 완성시키기*/
+
+const target = document.getElementsByClassName('attend')[0]; //올바른 값을 작성해주세요.
+const inputName = document.getElementsByTagName('input')[0]; //올바른 값을 작성해주세요.
+const inputName = document.querySelector('[name = "name"]'); //올바른 값을 작성해주세요.
+
+const attendee = document.getElementById('attendee'); //올바른 값을 작성해주세요.
+
+/*2. 입력받은 이름을 출석부에 나타내기*/
+
+function attend() {
+  /*여기에 작성해주세요.*/
+    attendee.innerText = inputName.value;
+}
+
+target.addEventListener("click", attend);
+
+</script>
+</html>
