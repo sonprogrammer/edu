@@ -17,12 +17,14 @@
             let myLi,
                 myText;
 
-            for (let i = 0; i <= 20; i++) {
-                myLi = document.createElement('li')
-                myUl.appendChild(myLi)  //myLi를 ul안에 넣겠다는 거임 즉 ul뒤에 
-                myText = document.createTextNode(i + '번째 문장')
-                myLi.appendChild(myText)    //myText를 myLi뒤에 넣겠다는거임
-            }
+            // for (let i = 0; i <= 20; i++) {
+            //     myLi = document.createElement('li')
+            //     myUl.appendChild(myLi)  //myLi를 ul안에 넣겠다는 거임 즉 ul뒤에 
+            //     myText = document.createTextNode(i + '번째 문장')
+            //     myLi.appendChild(myText)    //myText를 myLi뒤에 넣겠다는거임
+            // }
+  myUl.append(...Array.from(new Array(21),(_, i) => document.createElement('li').appendChild(document.createTextNode(`${i}번째 문장`)).parentNode));
+    //  myUl.append(...Array.from(new Array(21), (_, i) => document .createElement('li').appendChild(document.createTextNode(`${i} 번째 문장 `)).parentNode ) )
         </script>
 
     </body>
