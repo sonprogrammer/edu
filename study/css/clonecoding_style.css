@@ -1,0 +1,60 @@
+.header{
+    box-sizing: border-box;
+    border-bottom: solid 1px #dbdbdb;   
+}
+
+.header__container{
+    width: 975px;
+    height: 60px;
+    margin: 0 atuo; /*외부여백*/
+    padding: 0 20px; /*내부 여백*/
+    display: flex;
+    justify-content: space-between; /*수평으로 정렬*/
+    align-items: center;
+}
+
+.header__logo{
+    display: flex;
+    flex-basis: 333px;
+}
+.header__logo img:nth-child(2){ /*header__logo안에 있는 Img에서 두번째 이미지를 선택하는 거임*/
+    padding: 8px 4px;
+    cursor: pointer;
+}
+
+.header__search{
+    width: 268px;
+    position: relative;
+
+}
+
+.header__search img{
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translate(-50%, -50%);
+}
+
+.header__search input{
+    width: 268px;
+    height: 36px;
+    padding-left: 40px;
+    box-sizing: border-box;  /*정해진 사이즈에 맞게 하기위해 쓴다*/
+    background-color: #efefef;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+.header__buttons{
+    display: flex;
+    flex-basis: 333px;
+    justify-content: flex-end;
+}
+
+.header__buttons img{
+    margin: 0 9px;
+    cursor: pointer;
+}
+.header__buttons .header__avata img{
+    border-radius: 50%;
+}
