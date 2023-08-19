@@ -279,4 +279,91 @@
 
 .modal__layout .modal__card{
     width: 650px;
+    height: 750px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.modal__layout .modal__card .modal__header{
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #8e8e8e;
+}
+
+.modal__layout .modal__card .modal__header .modal__back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 60px;
+}
+
+.modal__layout .modal__card .modal__header .modal__back img{
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.modal__layout .modal__card .modal__header p{
+    visibility: hidden;
+    flex-basis: 60px;
+    color: #0095f6;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.modal__layout .modal__close{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal__layout .modal__close img{
+    padding: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal__layout .modal__card .modal__main{
+    width: 100%;
+    height: 100% ;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__layout .modal__card .modal__main img{
+    margin-bottom: 15px;
+}
+
+.modal__layout .modal__card .modal__main h3{
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.modal__layout .modal__card .modal__main label p{
+    width: 109px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #0095f6;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.modal__layout .modal__card .modal__main #file{
+    display: none;
 }
