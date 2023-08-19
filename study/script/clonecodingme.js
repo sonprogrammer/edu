@@ -43,3 +43,7 @@ addPostBtn.addEventListener('click', function(){
         document.body.removeChild(modalEl)
     })
 })
+
+//이미지 파일 업로드하기!
+// const fileEl = document.querySelector(#file)
+// fileEl.addEventListener('input', )

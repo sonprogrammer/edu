@@ -365,5 +365,5 @@
 }
 
 .modal__layout .modal__card .modal__main #file{
-    display: none;
+    /* display: none; */
 }
