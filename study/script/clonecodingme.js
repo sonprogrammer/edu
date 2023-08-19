@@ -1,6 +1,6 @@
-import close from '../img/close_icon.svg';
-import media from '../img/media_icon.svg';
-import arrow from '../img/arrow_back_icon.svg';
+const close = './img/close_icon.svg';
+const media = './img/media_icon.svg';
+const arrow = './img/arrow_back_icon.svg';
 
 const modal = `
                 <div class="modal__close">
@@ -37,7 +37,7 @@ addPostBtn.addEventListener('click', function(){
     const modalEl = document.createElement('div')
     modalEl.setAttribute('class','modal__layout') //class를 설정하고 modal__layout라고 이름을 만들어준다
     modalEl.innerHTML= modal;
-    document.body.prepend(modalEl) //위쪽 부분이라고 적어논곳 위에 나타남
+    document.body.prepend(modalEl) //위쪽 부분이라고 적어논곳 위에 나타남(body바로 밑에)
 
     document.querySelector('.modal__close > img').addEventListener('click', function(){
         document.body.removeChild(modalEl)
