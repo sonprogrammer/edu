@@ -47,3 +47,5 @@ addPostBtn.addEventListener('click', function(){
 //이미지 파일 업로드하기!
 // const fileEl = document.querySelector(#file)
 // fileEl.addEventListener('input', )
+
+document.wir
