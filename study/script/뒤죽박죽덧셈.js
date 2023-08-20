@@ -25,9 +25,12 @@ rl.on("line", function (line) {
   var num = parseInt(s); // 연산자가 아닌 숫자 부분
 
   // 조건에 맞추어 코딩해주시면 됩니다.
-  if(num % 3 == 0 && num % 5 !== 0){
-      document.write(num * o1)
-  }else if(num % 3 !== 0 && num % 5 == 0){
-      document.write(num * o2)
+  if(num % 3 == 0 && num % 5 == 0){
+  }else if(num % 5 == 0){
+    console.log(o1.repeat(num)) //num만큼 repeat한다
+  } else if(num % 3 == 0){
+    console.log(o2.repeat(num))
+  }else{
+    console.log(o1.repeat(num) + o2.repeat(num))
   }
 });
