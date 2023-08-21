@@ -115,15 +115,22 @@ function createModal() {
               if(window.indexedDB){ //window라는 객체안에 indexDB가 있을 경우에만 코드를 실행
                 const databaseName = 'instagram'
                 const version = 1
-                indexedDB.open(databaseName, version)
+                const request = indexedDB.open(databaseName, version)
+                
+                console.log(request)
                 const data ={
                   content: document.querySelector('.modal__write textarea').nodeValue,
                   image : imageBase64
                 }
+                request.onupgradeneeded = function(){
+                  request.result.creatObjectStore('posts',{autoIncrement: true})
+              }
+
                 request.onsuccess = function(){
-                  const store = request.result.transaction('posts', 'readwrite').objectStore('posts')
+                  const store = request.result.transaction('posts','readwrite').objectStore('posts')
                   store.add(data)
-                }
+
+              }
               }
             })
         }
