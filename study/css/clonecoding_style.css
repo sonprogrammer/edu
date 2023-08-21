@@ -365,5 +365,42 @@
 }
 
 .modal__layout .modal__card .modal__main #file{
-    /* display: none; */
+    display: none;
 }
+
+.modal__layout > .modal__card > .modal__main > .modal__post {
+    display: flex;
+  }
+  
+  .modal__layout > .modal__card > .modal__main > .modal__post > .modal__write {
+    width: 307px;
+  }
+  
+  .modal__layout
+    > .modal__card
+    > .modal__main
+    > .modal__post
+    > .modal__write
+    > textarea {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: 1px solid #8e8e8e;
+    border-bottom-right-radius: 20px;
+    outline: none;
+  }
+  
+  .modal__layout > .modal__card.write--post {
+    width: auto;
+    height: auto;
+  }
+  
+  .modal__layout > .modal__card.write--post > .modal__main.write--post {
+    height: auto;
+  }
+  
