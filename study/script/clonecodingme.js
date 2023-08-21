@@ -368,7 +368,7 @@ fileEl.addEventListener('input', function () {
 
 
 
-    
+
     if (response instanceof Error) {
       alert('Error:', response);
       document.querySelector('body').removeChild(modalEl);
@@ -410,6 +410,8 @@ fileEl.addEventListener('input', function () {
           const store = request.result
             .transaction('posts', 'readwrite')
             .objectStore('posts');
+
+
           store.add(data).onsuccess = function () {
             store.getAll().onsuccess = function (e) {
               const response = e.target.result;
@@ -427,6 +429,10 @@ fileEl.addEventListener('input', function () {
               }
             };
           };
+          request.onerror = function (event) {
+            console.error('Database error:', event.target.error);
+          };
+          
         };
       }
     });
@@ -447,8 +453,14 @@ const version = 1;
 if (window.indexedDB) {
   const request = indexedDB.open(databaseName, version);
 
-  request.onupgradeneeded = function () {
-    request.result.createObjectStore('posts', { autoIncrement: true });
+
+  // gpt도움 받은곳
+  request.onupgradeneeded = function (event) {
+    const db = event.target.result;
+    if(!db.objectStoreName.contains('posts')){
+      db.createObjectStore('posts', {autoIncrement:true})
+    }
+    // request.result.createObjectStore('posts', { autoIncrement: true });
   };
 
   request.onsuccess = function () {
