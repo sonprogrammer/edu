@@ -17,6 +17,17 @@ console.log('결제진행중')
 orderCallback(()=> console.log('결제완료'), 2000);
 console.log('배달시작')
 
+function orderCallback(cb) {
+    console.log('결제진행중');
+    setTimeout(() => {
+      console.log('결제완료');
+      cb();
+    });
+  }
+  
+  orderCallback(() => {
+    console.log('배달시작');
+  });
 
 
 
