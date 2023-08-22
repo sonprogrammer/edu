@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let a = 1; // a는 전역변수임, 그래서 A라는 함수에서도 접근 가능하고 B라는 함수에서도 접근가능함
+    let d = 2;
+    function A() {
+        function B() {
+
+            let c = 'c'
+            console.log(a, b, c,d) //여기서 지역변수 b는 클로져임, 클로저라는 A함수의 지역변수 b를 자식함수B가 접근가능하다
+        }
+        let b = 2; //b는 지역변수임
+        console.log(a, b, d)    //여기서 d는 2가 출력된다
+
+     B();
+    }
+
+    function C(){ // 전역변수 a는 사용가능하지만 지역변수 b는 접근이 불가하다
+        let c = 'c'
+        let d = "d" 
+        console.log(a, b, c,d) //여기서 d는 "d"가 출력된다
+    }
+    A()
+    B()
+
+</script>
+</html>
