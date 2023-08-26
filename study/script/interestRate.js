@@ -21,6 +21,7 @@ function getResultText(principal, rate, year, frequency, amount){
     frequency = parseFrequencyText(frequency)
     rate = parseRateText(rate)
     amount = parseMoneyText(amount)
+    
     return `예금액 ${principal}원 기준\n${year}년 후 \n ${frequency} ${rate}%의 복리 계산시\n최종 잔고는\n${amount}원 입니다.`
 }
 
