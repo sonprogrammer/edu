@@ -8,6 +8,6 @@ const currentDate = new Date()
   const minute = currentDate.getMinutes()
   const second = currentDate.getSeconds()
 
-return `현재 시간은 ${year}년 ${month}월 ${day}일 ${hour}시 ${minute}분 ${second}초 입니다.`
+return ` ${year}년 ${month}월 ${day}일 ${hour}시 ${minute}분 ${second}초 입니다.`
 }
 console.log(now())
