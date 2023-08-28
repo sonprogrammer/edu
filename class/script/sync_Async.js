@@ -29,6 +29,13 @@ const Counter = {
       //위는 setTimeout함수로 3초뒤에 count가 증가한다. 그와중에 다른 기능도 동시에 작동이 가능하다
     },
   };
+  const run = () => {
+    window.addEventListener("DOMContentLoaded", () => {
+      App();
+    });
+  };
+  
+  run();
   
 
   
