@@ -88,22 +88,23 @@
 
 
 
-var name = "window name";
+// var name = "window name";
 
-function Person(name) {
-  this.name = name;
-}
+// function Person(name) {
+//   this.name = name;
+// }
 
-Person.prototype.doSomething = function(callback) {
-  if(typeof callback == 'function') {
-    // --------- 1
-    callback();
-  }
-};
+// Person.prototype.doSomething = function(callback) {
+//   if(typeof callback == 'function') {
+//     // --------- 1
+//     callback()
+//     // callback.bind(this)(); //이렇게 하면 this가 Person을 가리킴 
+//   }
+// };
 
-function foo() {
-  console.log(this.name); // --------- 2
-}
+// function foo() {
+//   console.log(this.name); // --------- 2
+// }
 
-var p = new Person('Lee');
-p.doSomething(foo);  // window name
+// var p = new Person('Lee');
+// p.doSomething(foo);  // window name
