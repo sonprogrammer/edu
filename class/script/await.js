@@ -85,7 +85,7 @@ try{
     const result = await promise()
     console.log('1then', result)
     const then2 = await Promise.reject(result + 1)
-    
+
     try{
         console.log('2then', then2)
         const result2 = then2 + 1;
