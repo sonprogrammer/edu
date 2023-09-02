@@ -156,3 +156,42 @@
 // //이 입력은 선언이라 생각하면된다. 만약 콘솔 밑에 가게되면 콘솔엔 Not Set이 출력된다
 
 // console.log(userData.name)
+
+
+
+//화살표 함수 사용
+// this 대신 userData를 사용하는 방법
+// let userData = {
+//     signUp: '2021-4-06 12:00:00',
+//     name: 'Not Set',
+//     setName: function (firstName, lastName)  { //화살표함수로 변경
+//         this.name = firstName + ' ' + lastName;
+//     }
+// }
+
+// function getUserName(firstName, lastName, callback){
+//     callback(firstName, lastName)//call메서드 없이 호출
+// }
+
+// getUserName('son', 'youngjin', userData.setName)
+
+// console.log(userData.name)
+
+
+let userData = {
+    signUp: '2021-4-06 12:00:00',
+    name: 'Not Set',
+    setName: (firstName, lastName) => { // 화살표 함수로 변경
+        userData.name = firstName + ' ' + lastName; // userData.name으로 직접 접근
+    }
+}
+
+function getUserName(firstName, lastName, callback) {
+    callback(firstName, lastName);
+}
+
+
+getUserName('홍', '길동', userData.setName);
+console.log('1: ', userData.name); // 홍 길동
+console.log('2: ', window.name); // 홍 길동
+
