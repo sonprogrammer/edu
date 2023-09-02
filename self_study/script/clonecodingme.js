@@ -1,4 +1,5 @@
 const close = './img/close_icon.svg';
+
 const media = './img/media_icon.svg';
 const arrow = './img/arrow_back_icon.svg';
 

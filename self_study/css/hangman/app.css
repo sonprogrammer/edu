@@ -1,0 +1,114 @@
+.app {
+    display: flex;
+  
+    width: 768px;
+    height: 600px;
+  }
+  
+  .hangman-image-container {
+    background: var(--medium-turquoise);
+    flex: 1;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .controller-container {
+    background: var(--azure);
+    flex: 1;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* HangmanImage component */
+  
+  /* ButtonBox component */
+  #button-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 8px;
+    font-size: 20px;
+    color: #f8e74b;
+  }
+  
+  .start-button {
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    background: var(--corn);
+    color: var(--black-olive);
+    border-radius: 8px;
+    border: none;
+  }
+  
+  .start-button:disabled {
+    background: var(--corn_a);
+    color: var(--black-olive_a);
+  }
+  
+  /* Word component */
+  #word {
+    flex: 3;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #word p {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--corn);
+  }
+  
+  .word-text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+  }
+  
+  .word-text span {
+    display: inline-block;
+    width: 16px;
+    font-size: 20px;
+  
+    line-height: 21px;
+  }
+  
+  .word-text .character {
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+    margin-left: 4px;
+    color: var(--corn);
+  }
+  
+  /* KeyboardLayout component */
+  
+  .keyboard-layout {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    padding: 0 16px;
+  }
+  
+  .keyboard-button {
+    width: 36px;
+    height: 36px;
+    background: var(--corn);
+  
+    border: 3px solid gray;
+    border-radius: 12px;
+    color: var(--black-olive);
+  }
+  
+  .keyboard-button:disabled {
+    background: var(--corn_a);
+    color: var(--black-olive_a);
+  }
+  

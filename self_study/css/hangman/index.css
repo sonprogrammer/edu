@@ -1,0 +1,36 @@
+:root {
+    --azure: #3e80f4;
+    --medium-turquoise: #63d6ce;
+    --corn: #f8e74b;
+    --corn_a: #fdf7c4;
+    --gunmetal: #1c3041;
+    --black-olive: #353531;
+    --black-olive_a: #375e81;
+  }
+  
+  #root {
+    width: 100vw;
+    min-height: 100vh;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--gunmetal);
+  }
+  
+  #root > main {
+    border: 5px solid var(--black-olive);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+  }
+  
