@@ -14,10 +14,10 @@
 //   console.log(me); // { name: 'Joo' }
 
 const me = {
-    name: 'Jimmy'
-  };
+  name: 'Jimmy'
+};
   
-  function changeName(person) { //callee
+function changeName(person) { //callee
     person = { name: 'Joo' };
     console.log(me)
   }
