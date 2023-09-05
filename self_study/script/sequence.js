@@ -10,3 +10,13 @@ function foo(){
     baz()
 }
 foo()
+
+
+console.log('let')
+console.log('let')
+console.log('let')
+console.log('let')
+console.log('let')
+console.log('let')
+console.log('let')
+console.log('let', setTimeout(foo, 1000))
