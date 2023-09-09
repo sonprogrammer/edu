@@ -34,5 +34,12 @@
 
 
 
+let res = [3, 2, 4, 7, 14].reduce(function (accumulator, currentValue, currentIndex, array) {
+    console.log(`accumulator : ${accumulator}`)
+    console.log(`currentValue : ${currentValue}`)
+    console.log(`currentIndex : ${currentIndex}`)
+    console.log("                            ")     
+    return accumulator + currentValue
+})
 
-
+console.log("res: ", res)
