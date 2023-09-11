@@ -46,12 +46,82 @@
 
 
 
-let res = [2, 2, 2, 2, 2].reduce(function (accumulator, currentValue, currentIndex, array) {
-    console.log(`accumulator : ${accumulator}`)
-    console.log(`currentValue : ${currentValue}`)
-    console.log(`currentIndex : ${currentIndex}`)
-    console.log("                            ")     
-    return accumulator + currentValue
-})
+// let res = [2, 2, 2, 2, 2].reduce(function (accumulator, currentValue, currentIndex, array) {
+//     console.log(`accumulator : ${accumulator}`)
+//     console.log(`currentValue : ${currentValue}`)
+//     console.log(`currentIndex : ${currentIndex}`)
+//     console.log("                            ")     
+//     return accumulator + currentValue
+// })
 
-console.log("res: ", res)
+// console.log("res: ", res)
+
+
+
+// var initialValue = 0;
+// var list = [
+//     {x : 1},
+//     {x : 2},
+//     {x : 3},
+// ]
+// var sum = list.reduce((acc, cur)=>{
+//     acc+cur.x
+// },initialValue)
+
+// console.log(sum)
+
+
+// let peoples = [
+//     {
+//         name : 'alice',
+//         age: 21
+//     },
+//     {
+//         name : 'max',
+//         age: 23
+//     },
+//     {
+//         name : 'jane',
+//         age: 20
+//     }
+// ]
+
+// function groupBy(objectArray, property){
+//     return objectArray.reduce(function(accumulator, currentObj){
+//         let key = currentObj[property];
+//         console.log(`key : ${key}`)
+//         if(!accumulator[key]){
+//             accumulator[key] = [];
+//         }
+//         accumulator[key].push(currentObj)
+//         return accumulator;
+//     }, {})
+// }
+
+// let groupedPeople = groupBy(peoples, 'age')
+// console.log(`groupedPeople : ${JSON.stringify(groupedPeople)}`)
+
+
+
+// let arr = [1, 2, 1, 2, 3, 4, 5, 3, 5, 3, 2, 1, 7, 6, 21]
+
+// let result = arr.sort().reduce((acc,cur) =>{ //*! acc는 누적된 배열, cur는 현재요소
+//     const length = acc.length;
+//     if(length === 0 || acc[length - 1] != cur){
+//         acc.push(cur)
+//     }
+//     return acc
+// }, [])
+
+// console.log(result)
+
+
+//*filter를 reduce로 구현
+console.log([2, 4, 5, 6, 8].filter(val => val % 2 === 0))//[2, 4, 6, 8]
+
+console.log([2, 4, 5, 6, 8].reduce((acc, val)=>{
+    if(val % 2 === 0)
+        acc.push(val)
+    
+    return acc;
+}, []))
