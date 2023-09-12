@@ -92,4 +92,38 @@
 
 // *filter 사용 해보기
 
-
+let shoppingCart = [
+    {
+      product: "자전거",
+      qty: 1,
+      price: 849.0,
+    },
+    {
+      product: "에어팟",
+      qty: 1,
+      price: 249.0,
+    },
+    {
+      product: "운동화",
+      qty: 1,
+      price: 90.99,
+    },
+    {
+      product: "스웨터",
+      qty: 2,
+      price: 50.99,
+    },
+    {
+      product: "양말",
+      qty: 5,
+      price: 5.99,
+    },
+  ];
+  
+  let total = shoppingCart.reduce((acu, product) =>{ //*!acu는 누적된 결과를 나타내고 product는 배열의 각 요소(제품)을 나타낸다
+      return acu + product.qty * product.price
+  }, 0) //*!초기값을 0으로 설정해야 계산이 시작 될 때 acu의 초기값이 0이다
+  
+  
+  console.log(total);
+  
