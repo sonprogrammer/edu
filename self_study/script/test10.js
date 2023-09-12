@@ -73,3 +73,23 @@
 //     return result
 // }
 // console.log(makeNameList())
+
+
+//*Map 사용 해보기
+// let radius = [10, 30, 50, 7700];
+
+// // let volumes = []; // 구의 부피를 저장할 배열
+// // let volume = 0;
+// // for (let i = 0; i < radius.length; i++) {
+// //   volume = Math.floor((Math.PI * Math.pow(radius[i], 3) * 4) / 3);
+// //   volumes.push(volume);
+// // }
+// // console.log(volumes);
+
+// let newVolumes = radius.map((radius) => Math.floor(Math.pow(radius, 3) * 4/3 * Math.PI));
+// console.log(newVolumes);
+
+
+// *filter 사용 해보기
+
+
