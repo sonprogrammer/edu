@@ -35,4 +35,8 @@ const makeAdultNameList = (humanList) => {
       result += `<li>${human.name}</li>`;
     });
   
-    return result;}
+    return result;
+  }
+
+  let HELLO_WORLD = 'dfd'
+  
