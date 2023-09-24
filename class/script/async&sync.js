@@ -77,19 +77,40 @@
 
 // *clearTimeout = 일정 시간동안 반응이 없으면 이벤트하는것?
 
-const nameElem = document.querySelector('#inputName');
+// const nameElem = document.querySelector('#inputName');
 
-let alertTimer;
-function stop_going() {
-  const name = nameElem.value;
+// let alertTimer;
+// function stop_going() {
+//   const name = nameElem.value;
 
-  if (alertTimer) {
-    clearTimeout(alertTimer);
+//   if (alertTimer) {
+//     clearTimeout(alertTimer);
+//   }
+
+//   alertTimer = setTimeout(() => {
+//     alert(`입력된 이름은 : ${name}`);
+//   }, 1000);
+// }
+
+// nameElem.addEventListener('input', stop_going);
+
+
+
+
+let isInThrottle;
+function increaseScoreDuringTyping() {
+  if (isInThrottle) {
+    return;
   }
 
-  alertTimer = setTimeout(() => {
-    alert(`입력된 이름은 : ${name}`);
-  }, 1000);
-}
+  isInThrottle = true;
 
-nameElem.addEventListener('input', stop_going);
+  // 타이머 세팅
+  setTimeout(() => {
+    const score = document.querySelector("#score");
+    const newScore = parseInt(score.innerText) + 1;
+    score.innerText = newScore;
+
+    isInThrottle = false;
+  }, 500);
+}
