@@ -101,13 +101,35 @@
 //         .then((res) => res.json())
 //         .then((data) =>{ 
 //             const password = data.results[0].login.password
-                // *매개변수 data안에(fetch로 가져온 json파일) result라는 배열의 0번째 인덱스안에 있는
+//                 *매개변수 data안에(fetch로 가져온 json파일) result라는 배열의 0번째 인덱스안에 있는
 //             //*login이라는 객체안에 password를 const password로 설정함
 //             passwordEle.textContent = password
 //             //*json파일에서 가져온 password를 html의 passwordEle에 대채한다
 
 //         })
 // }
+
+//*위와 같은 동작이지만 async/await사용하기
+// const button = document.querySelector('#buttonSubmit')
+// const showPassword = document.querySelector('#password')
+
+
+// async function showHexaCode(e){
+//     e.preventDefault();
+
+//     const res = await fetch('https://randomuser.me/api/?password=upper,lower,number')
+//     const data = await res.json();
+
+
+
+//     const password = data.results[0].login.password
+
+//     showPassword.textContent = password
+
+
+// }
+
+// button.addEventListener('click', showHexaCode)
 
 
 
@@ -144,5 +166,80 @@
 
 // button.addEventListener('click', getEmail)
 
+
+//*fetch사용 하여 api호출하기(async/await)
+
+// const button = document.querySelector('#buttonSubmit')
+// const img = document.querySelector('#dogImage')
+
+// async function showImg(e){
+//     e.preventDefault();
+
+//     const res = await fetch('https://dog.ceo/api/breeds/image/random')
+//     const data = await res.json();
+
+//     const Image = data.message;
+//     img.src = Image
+// }
+
+
+// button.addEventListener('click', showImg)
+
+
+// fetch("https://reqres.in/api/users", {
+//   method: "POST",
+//   headers: { "Content-type": "application/json" },
+//   body: JSON.stringify({
+//     name: "첫번째 참가자",
+//   }),
+// })
+//   .then((res) => {
+//     if (res.ok) {
+//       console.log("success!");
+//       return res.json();
+//     } else {
+//       console.log("failed");
+//     }
+//   })
+//   .then((data) => console.log(data))
+//   .catch((error) => console.log("Error"));
+
+
+// import "babel-polyfill";
+
+// const startingMinutes = 10;
+// let time = startingMinutes * 60;
+// const countdownEl = document.getElementById("countdown");
+
+// setInterval(updateCountdown, 1000);
+
+// function updateCountdown() {
+//   const minutes = Math.floor(time / 60);
+//   let seconds = time % 60;
+//   countdownEl.innerHTML = `${minutes}: ${seconds}`;
+
+//   time--;
+
+//   if (time == 590) {
+//     let startTime = Date.now();
+//     timeTest().then(() => {
+//       let finishTime = Date.now();
+//       let timeTaken = finishTime - startTime;
+//       alert("Time taken in milliseconds: " + timeTaken);
+//     });
+//   }
+// }
+
+// function timeoutPromise(interval) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(function () {
+//       resolve("done");
+//     }, interval);
+//   });
+// }
+
+// async function timeTest() {
+//   await timeoutPromise(3000);
+// }
 
 
