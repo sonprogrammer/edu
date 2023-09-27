@@ -280,16 +280,38 @@
 
 //비동기 3초 타이머 
 
-const clickBtn = () =>{
-  setTimeout(()=>{
-    console.log( '1초<br>')
-  }, 1000)
-  setTimeout(()=>{
-    console.log( '2초<br>')
-  }, 2000)
-  setTimeout(()=>{
-    console.log( '3초<br>')
-  }, 3000)
-}
+// const clickBtn = () =>{
+//   setTimeout(()=>{
+//     console.log( '1초<br>')
+//   }, 1000)
+//   setTimeout(()=>{
+//     console.log( '2초<br>')
+//   }, 2000)
+//   setTimeout(()=>{
+//     console.log( '3초<br>')
+//   }, 3000)
+// }
 
-console.log(clickBtn())
+// console.log(clickBtn())
+
+// promise에서 입력 글자 길이, 읽을 글자수 비교 하기
+const countStr = (num) => {
+  const s = input1.value;
+
+  return new Promise((resolve, reject) => {
+    // Promise의 실행 결과를 배열에 담아 resolve나 reject로 전달하세요.
+    if (num > s.length) return reject([num, s]);
+    else return resolve([num, s.substr(0, num)]);
+  });
+};
+
+btn.addEventListener("click", () => {
+  countStr(input2.value)
+    // 전달받은 인자를 출력 형식에 맞춰서 출력하세요.
+    .then((param) => {
+      message.innerText = `앞에서 ${param[0]}글자는 ${param[1]}입니다.`;
+    })
+    .catch((param) => {
+      message.innerText = `${param[1]}의 길이가 ${param[0]}보다 짧습니다.`;
+    });
+});
