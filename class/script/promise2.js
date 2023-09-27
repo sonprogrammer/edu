@@ -295,23 +295,62 @@
 // console.log(clickBtn())
 
 // promise에서 입력 글자 길이, 읽을 글자수 비교 하기
-const countStr = (num) => {
-  const s = input1.value;
+// const countStr = (num) => {
+//   const s = input1.value;
 
-  return new Promise((resolve, reject) => {
-    // Promise의 실행 결과를 배열에 담아 resolve나 reject로 전달하세요.
-    if (num > s.length) return reject([num, s]);
-    else return resolve([num, s.substr(0, num)]);
-  });
-};
+//   return new Promise((resolve, reject) => {
+//     // Promise의 실행 결과를 배열에 담아 resolve나 reject로 전달하세요.
+//     if (num > s.length) return reject([num, s]);
+//     else return resolve([num, s.substr(0, num)]);
+//   });
+// };
 
-btn.addEventListener("click", () => {
-  countStr(input2.value)
-    // 전달받은 인자를 출력 형식에 맞춰서 출력하세요.
-    .then((param) => {
-      message.innerText = `앞에서 ${param[0]}글자는 ${param[1]}입니다.`;
-    })
-    .catch((param) => {
-      message.innerText = `${param[1]}의 길이가 ${param[0]}보다 짧습니다.`;
-    });
-});
+// btn.addEventListener("click", () => {
+//   countStr(input2.value)
+//     // 전달받은 인자를 출력 형식에 맞춰서 출력하세요.
+//     .then((param) => {
+//       message.innerText = `앞에서 ${param[0]}글자는 ${param[1]}입니다.`;
+//     })
+//     .catch((param) => {
+//       message.innerText = `${param[1]}의 길이가 ${param[0]}보다 짧습니다.`;
+//     });
+// });
+
+
+// const number = document.querySelector('inputNumber')
+// const print = document.querySelector('numberOfDates')
+// const btn = document.querySelector('buttonSubmit')
+
+// function countDate(e) { 
+//   // 새로고침 방지
+//   e.preventDefault()
+  
+//   const userInputNumber = inputElem.value 
+  
+//   fetch('coronaData.json')
+//     .then(response => response.json())
+//     .then(datas => { 
+//       const foundDatas = datas.filter(data => data.new_cases >= userInputNumber)
+//       //*! filter를 쓴이유는 userInputNumber이상인 모든 데이터 찾고 그 개수를 반환해야하기 때문
+//       //*! find는 배열에 주어진 조건을 만족하는 첫번째 요소만 반환하고 검색을 종료한다 
+//       resultElem.innerHTML = foundDatas.length
+//     })
+//   }
+
+// btn.addEventListener('click', countDate)
+
+import 'babel-polyfill';
+
+const getPokemonData = async () => {
+    let input = document.querySelector(".pokemon-input");
+    let pokemonName = document.querySelector(".pokemon-name");
+    
+    // const res = await fetch(`https://${window.location.hostname}:8190/data`);
+    const res = await fetch(`http://${window.location.hostname}:8090/data`);
+    const data = await res.json();
+    pokemonName.innerHTML = data.results[input.value].name;
+}
+var button = document.querySelector(".pokemon-button");
+button.addEventListener("click", getPokemonData);
+
+export default getPokemonData;
