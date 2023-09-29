@@ -33,3 +33,25 @@ router.get('/:show_id', async (req, res) =>{
 
 // 작성한 라우터를 exports하세요.
 module.exports = router;
+
+
+
+const { Router } = require("express");
+const { Student } = require("../models");
+
+const router = Router();
+
+// 지시사항을 참고하여 코드를 완성하세요.
+router.get("/", async (req, res) => {
+  const search_major = req.query.major;
+  //*사용자로부터 쿼리 매개변수로 받은 값임
+
+  const student = await Student.find({ major: search_major });
+  
+  res.json(student);
+});
+
+module.exports = router;
+
+///students 경로 요청이 오면 query.major로 search_major를 가져옵니다.
+// 몽구스 Student 모델에서 search_major가 일치하는 데이터를 찾아 비동기로 가져온 다음 JSON으로 클라이언트에게 응답합니다.
