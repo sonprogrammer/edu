@@ -12,7 +12,7 @@
         
         {% for writing in list %}
         <tr>
-            <td>({ writing.title })</td>
+            <td><a href="/detail/{{ detail.id}}">({ writing.title })</a></td>
             <td>({ writing.contents })</td>
             <td>({ writing.date })</td>
         </tr>
