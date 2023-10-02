@@ -18,6 +18,6 @@ app.get("/", (req, res) => {
 });
 
 // ./routes/contents.js에서 작성한 라우터를 "/contents" 경로에 등록합니다.
-app.use("/contents", contentsRouter);
+app.use("/contents", contentsRouter)
 
 app.listen(8080);
