@@ -21,4 +21,4 @@ const puppeteer = require('puppeteer');
 
   // 브라우저를 종료합니다.
   await browser.close();
-})();
+})();fdfdfd
