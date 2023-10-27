@@ -11,9 +11,10 @@ export default function BitcoinApp() {
 
 
   const submitHandler = (FormData) => { //formdata는 id. password를 나타낸다(registerform.jsx에서 정의 해줌)
-      authAPI.registerUser(FormData)
-            .then(authAPI.getUsers)
-            .then(setUsers)
+      authAPI.registerUser(FormData) //입력받은 formData로 새로운 유저를 생성
+            .then(authAPI.getUsers) //새로 저장된 유저의 정보를 불러옴(화면에는 표시x)
+            .then(setUsers) //setUsers함수를 사용하여 React상태를 업데이트하고 새로운 사용자 정보가 UI에 반영됨
+            //즉 사용자 정보를 가져온 후 화면에 나타내기 위해 setUsers 함수를 사용한다
             .catch(console.error)
   }
   
