@@ -7,7 +7,7 @@ function App() {
   const [email, setEmail] = useState('')
 
   return (
-    <>
+    <div>
       <label>
         Name:
         <input
@@ -30,7 +30,7 @@ function App() {
         {" "}
         이름: {name} 이메일: {email}{" "}
       </h3>
-    </>
+    </div>
   );
 }
 
