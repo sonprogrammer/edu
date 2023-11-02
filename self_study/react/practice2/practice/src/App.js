@@ -12,9 +12,12 @@ function App() {
     '아동용 코트 추천',
   ]);
 
-  const [like, setLike] = useState(0);
+  const [like, setLike] = useState([0, 0, 0]);
   const [modal, setModal] = useState(false);
 
+  
+
+  
   return (
     <div className="App">
       <div className="black-nav">
@@ -45,7 +48,7 @@ function App() {
       >
         글 수정
       </button>
-      <div className="list">
+      {/* <div className="list">
         <h4>
           {title[0]} <span onClick={() => setLike(like + 1)}>👍🏿</span> {like}{' '}
         </h4>
@@ -62,22 +65,30 @@ function App() {
           {title[2]} <span>👍🏿</span> {like}{' '}
         </h4>
         <p>11.01.2023</p>
-      </div>
-      {/* {title.map((a, i) => {
+      </div> */}
+
+
+
+      {title.map((a, i) => {
+        //a는 title안에 있는 하나하나의 데이터임, i는 반복문이 돌때마다 1씩 증가하는 정수이다.
         return (
-          <div className="list">
-            <h4>
-              {title[i]} <span>👍🏿</span> {like}{' '}
+          <div className="list" key={i}>
+            <h4 onClick={() => setModal(!modal)}>
+              {title[i]} 
+              {/* <span onClick={()=>{
+                const newLike = [...like]
+                newLike[i] = newLike[i]+1
+                setLike(newLike)
+              }}>👍🏿</span>{like[i]} */}
+              
             </h4>
             <p>11.01.2023</p>
           </div>
         );
-      })} */}
+      })}
 
       {/* 모달창 */}
-      {
-        modal === true ? <Modal /> : ''
-      }
+      {modal === true ? <Modal /> : ''}
     </div>
   );
 }
