@@ -11,7 +11,9 @@ function App() {
     '여자 코트 추천',
     '아동용 코트 추천',
   ]);
+
   const [like, setLike] = useState(0);
+  const [modal, setModal] = useState(false);
 
   return (
     <div className="App">
@@ -56,14 +58,26 @@ function App() {
         <p>11.01.2023</p>
       </div>
       <div className="list">
-        <h4>
+        <h4 onClick={()=>setModal(!modal)}>
           {title[2]} <span>👍🏿</span> {like}{' '}
         </h4>
         <p>11.01.2023</p>
       </div>
+      {/* {title.map((a, i) => {
+        return (
+          <div className="list">
+            <h4>
+              {title[i]} <span>👍🏿</span> {like}{' '}
+            </h4>
+            <p>11.01.2023</p>
+          </div>
+        );
+      })} */}
 
       {/* 모달창 */}
-      <Modal />
+      {
+        modal === true ? <Modal /> : ''
+      }
     </div>
   );
 }
