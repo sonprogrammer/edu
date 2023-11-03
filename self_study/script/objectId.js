@@ -6,4 +6,3 @@ const ObjectId = mongoose.Types.ObjectId;
 
 const newObjectId = new ObjectId();
 console.log(newObjectId)
-
