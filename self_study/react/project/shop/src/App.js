@@ -6,6 +6,8 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { useState } from 'react'
 import data from './data'
+import { Routes, Route, Link } from 'react-router-dom'
+import Detail from './detail'
 
 function App() {
   const [shoes, setShoes] = useState(data)
@@ -26,39 +28,27 @@ function App() {
         </Container>
       </Navbar>
 
-      <div className='main-bg'></div>
+      <Link to='/'>홈으로 이동하기</Link>
+      <Link to='/detail'>상시페이지 이동하기</Link>
 
-      <div className='container'>
-        <div className='row'>
-          {/* <div className='col-md-4'>
-            <img
-              src='https://codingapple1.github.io/shop/shoes1.jpg'
-              width={'80%'}
-            />
-            <h4>{shoes[0].title}</h4>
-            <p>{shoes[0].price}</p>
-          </div>
-          <div className='col-md-4'>
-            <img
-              src='https://codingapple1.github.io/shop/shoes2.jpg'
-              width={'80%'}
-            />
-            <h4>{shoes[1].title}</h4>
-            <p>{shoes[1].price}</p>
-          </div>
-          <div className='col-md-4'>
-            <img
-              src='https://codingapple1.github.io/shop/shoes3.jpg'
-              width={'80%'}
-            />
-            <h4>{shoes[2].title}</h4>
-            <p>{shoes[2].price}</p>
-          </div> */}
-          {shoes.map((title, idx)=>(
-             <Item title={shoes[idx].title} price={shoes[idx].price} idx = {shoes[idx].id+1} />
-          ))}
-        </div>
-      </div>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <>
+              <div className='main-bg'></div>
+              <div className='container'>
+                <div className='row'>
+                  {shoes.map((a, idx) => (
+                    <Item shoes={shoes[idx]} i={idx} />
+                  ))}
+                </div>
+              </div>
+            </>
+          }
+        />
+        <Route path='/detail' element={ <Detail /> } />
+      </Routes>
     </div>
   )
 }
@@ -67,10 +57,13 @@ export default App
 
 function Item(props) {
   return (
-    <div className='col-md-4' key={props.idx}>
-      <img src={`https://codingapple1.github.io/shop/shoes${props.idx}.jpg`} width={'80%'} />
-      <h4>{props.title}</h4>
-      <p>{props.price}won</p>
+    <div className='col-md-4' key={props.i}>
+      <img
+        src={`https://codingapple1.github.io/shop/shoes${props.i + 1}.jpg`}
+        width={'80%'}
+      />
+      <h4>{props.shoes.title}</h4>
+      <p>{props.shoes.price}won</p>
     </div>
   )
 }
