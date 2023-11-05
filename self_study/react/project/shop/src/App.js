@@ -6,11 +6,15 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { useState } from 'react'
 import data from './data'
-import { Routes, Route, Link } from 'react-router-dom'
-import Detail from './detail'
+import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
+import Detail from './routes/detail'
+import Event from './routes/event'
 
 function App() {
   const [shoes, setShoes] = useState(data)
+
+  const navigate = useNavigate();
+
   return (
     <div className='App'>
       <Navbar bg='dark' data-bs-theme='dark'>
@@ -22,8 +26,8 @@ function App() {
           }}>
           <Navbar.Brand href='#home'>Come with us</Navbar.Brand>
           <Nav className='me-auto'>
-            <Nav.Link href='#home'>Home</Nav.Link>
-            <Nav.Link href='#Cart'>Cart</Nav.Link>
+            <Nav.Link onClick={ navigate('/')}>Home</Nav.Link>
+            <Nav.Link onClick={ navigate('/detail')}>Detail</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -32,6 +36,10 @@ function App() {
       <Link to='/detail'>상시페이지 이동하기</Link>
 
       <Routes>
+        {/* <Route path='/event' element={<Event />}>
+          <Route path='one' element={<div>첫 주문시 양배추즙 서비스</div>} />
+          <Route path='two' element={<div>생일기념 쿠폰 받기</div>} />
+        </Route> */}
         <Route
           path='/'
           element={
@@ -47,7 +55,7 @@ function App() {
             </>
           }
         />
-        <Route path='/detail' element={ <Detail /> } />
+        <Route path='/detail' element={ <Detail shoes={shoes}/> } />
       </Routes>
     </div>
   )
