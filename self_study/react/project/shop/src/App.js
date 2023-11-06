@@ -9,9 +9,13 @@ import data from './data'
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
 import Detail from './routes/detail'
 import Event from './routes/event'
+import axios from 'axios'
 
 function App() {
   const [shoes, setShoes] = useState(data)
+  const [loading, setLoading] = useState(false)
+  const [click, setClick]= useState(2)
+
 
   const navigate = useNavigate();
 
@@ -24,7 +28,7 @@ function App() {
             marginLeft: '10px',
             justifyContent: 'space-around',
           }}>
-          <Navbar.Brand href='#home'>Come with us</Navbar.Brand>
+          <Navbar.Brand style={{cursor:'pointer'}}onClick={()=>{navigate('/')}}>Come with us</Navbar.Brand>
           <Nav className='me-auto'>
             <Nav.Link onClick={ ()=>navigate('/')}>Home</Nav.Link>
             <Nav.Link onClick={ ()=>navigate('/detail')}>Detail</Nav.Link>
@@ -45,6 +49,23 @@ function App() {
                   ))}
                 </div>
               </div>
+              <button onClick={()=>{
+                setLoading(true);
+                axios.get(`https://codingapple1.github.io/shop/data${click}.json`)
+                  .then((res)=>{console.log(res.data);
+                    const addShoes = [...shoes, ...res.data]
+                    setShoes(addShoes)
+                    console.log(shoes)
+                  })
+                  .catch(()=>{console.log('Error')})
+                  .finally(()=>{setLoading(false); setClick(click+1)
+                  if(click == 4) {
+                    alert('there is no more data to display')
+                  }})
+
+                  axios.post()
+              }}>더보기</button>
+              {loading && <p>loading...</p>}
             </>
           }
         />

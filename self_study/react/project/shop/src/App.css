@@ -15,6 +15,16 @@
   margin-top: 8px;
 }
 
+/* 애니메이션 동작 전 클래스네ㅔ임 */
+.start{
+  opacity: 0;
+}
+/* 애니메이션 동작 후 클래스 네임 */
+.end{
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
