@@ -26,20 +26,13 @@ function App() {
           }}>
           <Navbar.Brand href='#home'>Come with us</Navbar.Brand>
           <Nav className='me-auto'>
-            <Nav.Link onClick={ navigate('/')}>Home</Nav.Link>
-            <Nav.Link onClick={ navigate('/detail')}>Detail</Nav.Link>
+            <Nav.Link onClick={ ()=>navigate('/')}>Home</Nav.Link>
+            <Nav.Link onClick={ ()=>navigate('/detail')}>Detail</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
 
-      <Link to='/'>홈으로 이동하기</Link>
-      <Link to='/detail'>상시페이지 이동하기</Link>
-
       <Routes>
-        {/* <Route path='/event' element={<Event />}>
-          <Route path='one' element={<div>첫 주문시 양배추즙 서비스</div>} />
-          <Route path='two' element={<div>생일기념 쿠폰 받기</div>} />
-        </Route> */}
         <Route
           path='/'
           element={
@@ -55,7 +48,7 @@ function App() {
             </>
           }
         />
-        <Route path='/detail' element={ <Detail shoes={shoes}/> } />
+        <Route path='/detail/:id' element={ <Detail shoes={shoes}/> } />
       </Routes>
     </div>
   )
