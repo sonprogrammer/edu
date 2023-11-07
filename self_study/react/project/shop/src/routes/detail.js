@@ -59,7 +59,7 @@ function Detail(props) {
         <Nav.Link eventKey="link2" onClick={()=>{setTab(2)}}>button 3</Nav.Link>
       </Nav.Item>
     </Nav>
-    <TabContent tab={tab}/>
+    <TabContent  tab={tab}/>
     
 
     </div>

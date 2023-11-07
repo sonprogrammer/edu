@@ -4,18 +4,23 @@ import 'bootstrap/dist/css/bootstrap.min.css' //react bootstrap들어가면 나�
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import { useState } from 'react'
+import React,{ createContext, useState } from 'react'
 import data from './data'
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
 import Detail from './routes/detail'
 import Event from './routes/event'
 import axios from 'axios'
+import Cart from './routes/Cart'
+
+
+const Context1 = createContext()
+
 
 function App() {
   const [shoes, setShoes] = useState(data)
   const [loading, setLoading] = useState(false)
   const [click, setClick]= useState(2)
-
+  const [stock, setStock] = useState([10, 11, 12])
 
   const navigate = useNavigate();
 
@@ -32,6 +37,7 @@ function App() {
           <Nav className='me-auto'>
             <Nav.Link onClick={ ()=>navigate('/')}>Home</Nav.Link>
             <Nav.Link onClick={ ()=>navigate('/detail')}>Detail</Nav.Link>
+            <Nav.Link onClick={ ()=>navigate('/cart')}>Cart</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -70,6 +76,9 @@ function App() {
           }
         />
         <Route path='/detail/:id' element={ <Detail shoes={shoes}/> } />
+
+        <Route path='/cart' element={ <Cart />} />
+
       </Routes>
     </div>
   )
