@@ -28,7 +28,11 @@ function Cart() {
                 <td>{carts[i].id}</td>
                 <td>{carts[i].name}</td>
                 <td>{carts[i].count}</td>
-                <td>수정하기</td>
+                <td>
+                    <button onClick={()=>{
+                        
+                    }}>+</button>
+                </td>
               </tr>
             )
           })}
