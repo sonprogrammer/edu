@@ -28,7 +28,6 @@ function Detail(props) {
 
   console.log(props.shoes)
   console.log(item)
-  console.log('ID', id)
 
   useEffect(() => {
     setFade2('end')
@@ -54,7 +53,7 @@ function Detail(props) {
           <p>{item.content}</p>
           <p>{item.price}</p>
           <button className='btn btn-danger' onClick={()=>{
-            dispatch(addOrder({item}))
+            dispatch(addOrder({id: item.id, name: item.title, count: 1}))
           }}>주문하기</button>
         </div>
       </div>

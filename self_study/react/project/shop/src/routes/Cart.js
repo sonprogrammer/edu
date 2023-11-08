@@ -1,6 +1,6 @@
 import { Table } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
-import { addCount } from '../store/store'
+import { addCount,removeItem } from '../store/store'
 import { changeAge } from '../store/userSlice'
 
 function Cart() {
@@ -31,10 +31,11 @@ function Cart() {
         <thead>
           <tr>
             {/* tr은 행, th,td는 열 */}
-            <th>#</th>
+            <th>id</th>
             <th>상품명</th>
             <th>수량</th>
             <th>변경하기</th>
+            <th>주문삭제</th>
           </tr>
         </thead>
         {/* thead는 제목부분 */}
@@ -49,8 +50,13 @@ function Cart() {
                 <td>{carts[i].count}</td>
                 <td>
                   <button onClick={() => {
-                    dispatch(addCount(i));
+                    dispatch(addCount(carts[i].id)); //순서가 뒤바뀌어도 옆에있는 상품의 id값을 찾고 그걸 +1해줌
                   }}>+</button>
+                </td>
+                <td>
+                  <button onClick={()=>{
+                    dispatch(removeItem(carts[i].id))
+                  }}>-</button>
                 </td>
               </tr>
             )
