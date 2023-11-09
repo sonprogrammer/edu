@@ -21,19 +21,15 @@ const cart = createSlice({
       //cart 스테이트에 count를 +1해줘라이다
     },
     addOrder(state, action) {
-      // const orderItem = action.payload
-      // state.push(orderItem)
-      const addId = state.find((a) => a.id === action.payload.id)
-      if(addId === undefined) {
-         state.push(action.payload)
+      const orderItem = action.payload
+      const existingItem = state.find((a) => a.id === action.payload.id)
+      
+      if(existingItem){
+        existingItem.count += 1
       }else{
-        state[addId.id].count++
-        // state[addId].count += 1
+        return [...state, orderItem]
+
       }
-
-
-    
-
       //id값이 하나더 cart에 존재한다면 수량만 증가시켜라
     },
     removeItem(state, action) {

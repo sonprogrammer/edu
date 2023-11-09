@@ -13,7 +13,7 @@ function Detail(props) {
   const [tab, setTab] = useState(0)
   const [fade2, setFade2] = useState('')
 
-  const carts = useSelector((state)=> state.cart)
+  const carts = useSelector((state) => state.cart)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -24,11 +24,28 @@ function Detail(props) {
   }, [num])
 
   const { id } = useParams()
-  const item =props.shoes.find((x) => x.id == id)
+  const item = props.shoes.find((x) => x.id == id)
 
   console.log(props.shoes)
   console.log(item)
 
+  //누가 detail페이지 접속하면 그 페이지에 보이는 상품 Id를 가져와서 localStorage에 watche항목에 추가
+  // useEffect(() => {
+  //   let 꺼낸거 = localStorage.getItem('watched') //localStorage에서 wathced라는 항목을 꺼냄
+  //   꺼낸거 = JSON.parse(꺼낸거)
+  //   꺼낸거.push(item.id)
+  //   localStorage.setItem('watched', JSON.stringify(꺼낸거))
+  // }, [])
+
+  useEffect(() => {
+    let 꺼낸거 = localStorage.getItem('watched');
+    꺼낸거 = JSON.parse(꺼낸거);
+    꺼낸거.push(item.id);
+    꺼낸거 = new Set(꺼낸거) // new Set()함수로 중복된것을 삭제함
+    꺼낸거 = Array.from(꺼낸거) //new Set()함수로 만들어진걸 다시 배열로 만듦
+    localStorage.setItem('watched', JSON.stringify(꺼낸거));
+  }, []);
+  
   useEffect(() => {
     setFade2('end')
   }, [])
@@ -43,7 +60,7 @@ function Detail(props) {
       <div className='row'>
         <div className='col-md-6'>
           <img
-            src={`https://codingapple1.github.io/shop/shoes${id}.jpg`}
+            src={`https://codingapple1.github.io/shop/shoes${item.id + 1}.jpg`}
             width='100%'
           />
         </div>
@@ -52,9 +69,13 @@ function Detail(props) {
           <h4 className='pt-5'>{item.title}</h4>
           <p>{item.content}</p>
           <p>{item.price}</p>
-          <button className='btn btn-danger' onClick={()=>{
-            dispatch(addOrder({id: item.id, name: item.title, count: 1}))
-          }}>주문하기</button>
+          <button
+            className='btn btn-danger'
+            onClick={() => {
+              dispatch(addOrder({ id: item.id, name: item.title, count: 1 }))
+            }}>
+            주문하기
+          </button>
         </div>
       </div>
 
