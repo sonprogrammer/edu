@@ -79,7 +79,9 @@ function App() {
               <div className='container'>
                 <div className='row'>
                   {shoes.map((a, idx) => (
-                    <Item shoes={shoes[idx]} i={idx} />
+                    <Item shoes={shoes[idx]} i={idx} onClick={()=>{
+                      navigate(`/detail/${a.id}`)
+                    }}/>
                   ))}
                 </div>
               </div>
@@ -127,7 +129,7 @@ export default App
 
 function Item(props) {
   return (
-    <div className='col-md-4' key={props.i}>
+    <div className='col-md-4' key={props.i} onClick={props.onClick}>
       <img
         src={`https://codingapple1.github.io/shop/shoes${props.i + 1}.jpg`}
         width={'80%'}
@@ -151,7 +153,7 @@ function CurrentItem(props) {
       return props.shoes.find((x) => x.id === id)
     })
     setCurrentItems(items)
-  }, [])
+  }, [currentItems])
 
   return (
     <div>
