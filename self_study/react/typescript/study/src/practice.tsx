@@ -49,3 +49,61 @@ for(let i = 0; i < tag.length; i++) {
 
     }
 }
+class Car{
+    model : string;
+    price: number;
+    constructor(a: string, b: number){
+
+        this.model = a
+        this.price = b
+    }
+    tax() :number{
+        return this.price*0.1;
+    }
+}
+
+
+class Word{
+    num;
+    str;
+    constructor(...params : (number | string)[]){
+        let 숫자들: number[] = [];
+        let 문자들: string[] = [];
+
+        params.forEach((i)=>{
+            if(typeof i === 'string'){
+                문자들.push(i)
+            }else{
+                숫자들.push(i)
+            }
+        })
+        this.num = 숫자들
+        this.str = 문자들;
+    }
+}
+
+// type Square = { color : string, width: number}
+
+
+interface Square{
+    color : string,
+    width : number,
+}
+
+interface Item {
+    brand: string,
+    serialNumber: number,
+    model: string[]
+}
+
+
+interface Cart1{
+    product: string,
+    price: number
+}
+
+interface NewCart extends Cart1{
+    card: boolean;
+}
+let 장바구니: Cart1[] = [ { product : '청소기', price : 7000 }, { product : '삼다수', price : 800 } ] 
+
