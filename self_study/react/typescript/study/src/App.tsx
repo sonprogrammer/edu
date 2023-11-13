@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+
+import Side from './Side';
+
+
 
 function App() {
+  const handleItemClick = (label: string) => {
+    // 메뉴 아이템이 클릭되었을 때 수행할 동작을 정의하세요.
+    console.log('Clicked on menu item:', label);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Side handleItemClick={handleItemClick}/>
+    </>
   );
-}
+};
 
 export default App;
