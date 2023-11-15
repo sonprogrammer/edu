@@ -1,11 +1,10 @@
 // components/icons/MyIcon1.jsx
 import React from 'react'
-import styled from 'styled-components'
-import tw from 'twin.macro'
 
 export const Home = () => (
   <svg
-    className={`w-6 h-6 text-gray-800 dark:text-white`}
+    className='w-6 h-6 text-gray-800 dark:text-white'
+    width='20'
     aria-hidden='true'
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
@@ -14,10 +13,10 @@ export const Home = () => (
   </svg>
 )
 
-
 export const User = () => (
   <svg
-    className='w-6 h-6 text-gray-800 dark:text-white'
+    className={`w-2 h-2 text-gray-800 dark:text-white`}
+    width='20'
     aria-hidden='true'
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
@@ -28,6 +27,7 @@ export const User = () => (
 export const Fire = () => (
   <svg
     className='w-6 h-6 text-gray-800 dark:text-white'
+    width='20'
     aria-hidden='true'
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
@@ -38,6 +38,7 @@ export const Fire = () => (
 export const Mypage = () => (
   <svg
     className='w-6 h-6 text-gray-800 dark:text-white'
+    width='20'
     aria-hidden='true'
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
@@ -49,6 +50,7 @@ export const Mypage = () => (
 export const Heart = () => (
   <svg
     className='w-6 h-6 text-gray-800 dark:text-white'
+    width='20'
     aria-hidden='true'
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
@@ -60,6 +62,7 @@ export const Heart = () => (
 export const Chart = () => (
   <svg
     className='w-6 h-6 text-gray-800 dark:text-white'
+    width='20'
     aria-hidden='true'
     xmlns='http://www.w3.org/2000/svg'
     fill='none'
@@ -76,6 +79,7 @@ export const Chart = () => (
 export const Recent = () => (
   <svg
     className='w-6 h-6 text-gray-800 dark:text-white'
+    width='20'
     aria-hidden='true'
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
@@ -87,6 +91,8 @@ export const Recent = () => (
 export const Dropdown = () => (
   <svg
     className='w-6 h-6 text-gray-800 dark:text-white'
+    width='20'
+  
     aria-hidden='true'
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
