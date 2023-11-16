@@ -1,38 +1,30 @@
+
+
+
 import React, { useState } from 'react';
-import {
-  Nav,
-  Logo,
-  DivideLine,
-  ButtonsContainer,
-  ButtonWrapper,
-  Button,
-  UserInfo,
-  Dropeddown,
-  DropeddownContents,
-} from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faFire, faChartSimple, faHeadphones, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHouse, faFire, faChartSimple, faHeadphones, faHeart } from '@fortawesome/free-solid-svg-icons';
+import {Nav, Logo, DivideLine, ButtonsContainer, Button, SubcontentBox, Subcontent   }from './styles'
 
-export default function SideBarComponent() {
-  const [isDropdown, setIsDropdown] = useState(false);
 
-  const Dropdownbtn = () => {
-    setIsDropdown(!isDropdown);
-    console.log('isDropdown', isDropdown)
+function SidebarContents() {
+  const [openSubMenu, setOpenSubMenu] = useState(null);
+
+  const toggleSubMenu = (index) => {
+    setOpenSubMenu(openSubMenu === index ? null : index);
   };
 
   interface Item {
-    content: string;
+  content: string;
     icon: React.ReactNode;
-    dropdownItems?: string[];
+    subcontent?: string[];
   }
 
-  const data = ['마이페이지', '회원정보 수정', '로그아웃'];
-
-  const items: Item[] = [
+  const Menus: Item[] = [
     {
       content: '프로필',
       icon: <FontAwesomeIcon icon={faUser} />,
+      subcontent: ['메인페이지', '회원정보 수정', '로그아웃'],
     },
     { content: '피드', icon: <FontAwesomeIcon icon={faHouse} /> },
     { content: '추천 플레이리스트', icon: <FontAwesomeIcon icon={faFire} /> },
@@ -46,22 +38,24 @@ export default function SideBarComponent() {
       <DivideLine>
         <Logo>로고</Logo>
       </DivideLine>
-
-      <ButtonsContainer>
-        {items.map((item, index) => (
-          <Button key={index} onClick={Dropdownbtn}>
-            <span>{item.icon}</span>
-            <span>{item.content}</span>
-            <Dropeddown isVisible={isDropdown}>
-              {data.map((item, i) => (
-                <DropeddownContents key={i}>
-                  <h4>{item}</h4>
-                </DropeddownContents>
+      {Menus.map((menu, index) => (
+        <Button isFlex={true} key={index} onClick={() => {
+          toggleSubMenu(index); 
+          console.log(`선택메뉴 : ${menu.content}`)}
+          }>
+          <p>{menu.icon}</p>
+          <p>{menu.content}</p>
+          {openSubMenu === index && menu.subcontent && (
+            <SubcontentBox>
+              {menu.subcontent.map((subItem, subIndex) => (
+                <Subcontent key={subIndex}>{subItem}</Subcontent>
               ))}
-            </Dropeddown>
-          </Button>
-        ))}
-      </ButtonsContainer>
+            </SubcontentBox>
+          )}
+        </Button>
+      ))}
     </Nav>
   );
 }
+
+export default SidebarContents;
