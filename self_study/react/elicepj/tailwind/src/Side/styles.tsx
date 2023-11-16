@@ -1,32 +1,32 @@
-import tw from 'twin.macro'
-import styled from 'styled-components'
+// styles.ts
+import tw from 'twin.macro';
+import styled from 'styled-components';
 
-export const Nav =styled.div`
+export const Nav = styled.nav`
   ${tw`
     fixed
     left-0
-      top-0
+    top-0
     bg-[#404040]
     box-border
     text-white
-    // top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#404040] text-white p-4 flex flex-col
     h-full
     border-r-indigo-500
   `}
   width: 16rem;
-`
+`;
 
 export const Logo = styled.span`
   ${tw`
     text-4xl font-semibold
   `}
-`
+`;
 
 export const DivideLine = styled.div`
   ${tw`
     flex items-center justify-center h-20 border-b
   `}
-`
+`;
 
 export const ButtonsContainer = styled.div`
   ${tw`
@@ -37,7 +37,7 @@ export const ButtonsContainer = styled.div`
     hover:border-slate-400 
     justify-between
   `}
-`
+`;
 
 export const ButtonWrapper = styled.div`
   ${tw`
@@ -45,7 +45,7 @@ export const ButtonWrapper = styled.div`
     items-center space-x-3
   `}
   width: 16rem;
-`
+`;
 
 export const Button = styled.div`
   ${tw`
@@ -54,49 +54,32 @@ export const Button = styled.div`
     hover:border-slate-400 
     pl-4
     py-4
+    relative
   `}
   width: 16rem;
-`
+`;
 
-export const Dropeddown = styled.div`
+export const Dropeddown = styled.div<{ isVisible: boolean }>`
   ${tw`
-    flex-1
-    flex
-    flex-col
-    gap-1
+    absolute
+    top-full
+    left-0
+    bg-gray-800
+    text-white
     p-2
+    border-t
+    transition-all duration-300
   `}
-  
-  // 
-`
+  transform: translateY(${(props) => (props.isVisible ? '0' : '-100%')});
+  opacity: ${(props) => (props.isVisible ? '1' : '0')};
+  visibility: ${(props) => (props.isVisible ? 'visible' : 'hidden')};
+  display: block;
+
+  z-index: 1; // Dropdown이 위에 올라오도록 설정
+`;
 
 export const DropeddownContents = styled.div`
   ${tw`
-    p-2
-
+    p-2 cursor-pointer hover:bg-gray-600
   `}
-  
-`
-
-export const DropdownItem = styled.div`
-  ${tw`
-    p-2 cursor-pointer hover:bg-gray-200
-  `}
-`
-
-export const DropdownMenu = styled.div`
-  absolute 
-  flex
-  flex-col
-  top-full
-  right-20
-  right-0
-  bg-color-black
-  z-10
-`
-
-export const DropdownList = styled.ul`
-  flex
-  flex-col 
-  gap-4
-`
+`;
