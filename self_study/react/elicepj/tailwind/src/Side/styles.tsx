@@ -17,15 +17,16 @@ export const Nav = styled.nav`
   `}
 `
 
-export const Logo = styled.span`
+export const Logo = styled.img`
   ${tw`
-    text-4xl font-semibold
+
   `}
 `
 
 export const DivideLine = styled.div`
   ${tw`
-    flex items-center justify-center h-20 border-b
+    // flex items-center justify-center h-20 border-b
+    flex items-center justify-center h-[87px] border-b
   `}
 `
 
@@ -61,6 +62,9 @@ export const Button = styled.div`
   flex
   items-center
   `}
+  &:hover{
+    background-color: black;
+  }
   SubcontentBox{
     flex-none
   }

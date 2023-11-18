@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHouse, faFire, faChartSimple, faHeadphones, faHeart } from '@fortawesome/free-solid-svg-icons';
-import {Nav, Logo, DivideLine, ButtonsContainer, Button, SubcontentBox, Subcontent   }from './styles'
+import {Nav, Logo, DivideLine, Button, SubcontentBox, Subcontent   }from './styles'
 
 
 function SidebarContents() {
@@ -36,7 +36,7 @@ function SidebarContents() {
   return (
     <Nav>
       <DivideLine>
-        <Logo>로고</Logo>
+        <Logo src='https://cdn.discordapp.com/attachments/1171419054314106982/1174894519234351135/324234.png?ex=656940c9&is=6556cbc9&hm=65c303d50798e68596681d05e1390d8e14256c75270a3789b3a195c90614c576&' alt='logo' />
       </DivideLine>
       {Menus.map((menu, index) => (
         <Button isFlex={true} key={index} onClick={() => {
