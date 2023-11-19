@@ -120,6 +120,7 @@ function App() {
         <Route path='/detail/:id' element={<Detail shoes={shoes} />} />
 
         <Route path='/cart' element={<Cart />} />
+        <Route path='*' element={<div>없는 페이지입니다</div>}></Route>
       </Routes>
     </div>
   )
@@ -139,6 +140,12 @@ function Item(props) {
     </div>
   )
 }
+
+// shoes.map((a, idx) => (
+//   <Item shoes={shoes[idx]} i={idx} onClick={()=>{
+//     navigate(`/detail/${a.id}`)
+//   }}/>
+// ))}
 
 function CurrentItem(props) {
   // localStorage에서 ID 목록을 가져옴
