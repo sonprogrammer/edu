@@ -1,21 +1,36 @@
+// App.tsx
 import React from 'react';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-
-import Side from './Side';
-
-
+import SideBar from './Side';
+import './index.css'
+import StyledForm from './styles';
 
 function App() {
   const handleItemClick = (label: string) => {
-    // 메뉴 아이템이 클릭되었을 때 수행할 동작을 정의하세요.
-    console.log('Clicked on menu item:', label);
+    console.log('메뉴 아이템 클릭:', label);
   };
 
   return (
-    <>
-      <Side handleItemClick={handleItemClick}/>
-    </>
+    // <div className="flex h-screen bg-gray-100">
+    <div>
+
+
+      <SideBar handleItemClick={handleItemClick} />
+      <form>
+        <input type="text" placeholder="Full name" />
+        <input type="text" placeholder="Email" />
+        <input type="text" placeholder="Password" />
+        <button>Sign In</button>
+      </form>
+    </div>
+
+
+      // <div className="flex-1 flex flex-col overflow-hidden">
+        // <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200 p-4">
+
+        // </main>
+      // </div>
+    // </div>
   );
-};
+}
 
 export default App;

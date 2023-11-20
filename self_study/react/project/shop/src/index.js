@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App1 from './App1'
+import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -15,7 +15,7 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <Provider store={store}>
       <BrowserRouter>
-        <App1 />
+        <App />
       </BrowserRouter>
     </Provider>
   </QueryClientProvider>

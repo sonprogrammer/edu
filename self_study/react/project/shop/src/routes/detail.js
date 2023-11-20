@@ -22,7 +22,7 @@ function Detail(props) {
       alert('put number')
     }
   }, [num])
-
+console.log(props.name)
   const { id } = useParams()
   const item = props.shoes.find((x) => x.id == id)
 

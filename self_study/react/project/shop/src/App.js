@@ -33,11 +33,12 @@ function App() {
       .then((req) => { return req.data });
   }});
 
-  
+  // const userName = axios.get('https://codingapple1.github.io/userdata.json')
+  //   .then((res) => res.data)
 
-  // axios
-  //   .get('https://codingapple1.github.io/userdata.json')
-  //   .then((req) => req.data)
+  
+  //   console.log(userName)
+
 
   //누가 detail페이지 접속하면 그 페이지에 보이는 상품 Id를 가져와서 localStorage에 watche항목에 추가
 
@@ -62,6 +63,8 @@ function App() {
             <Nav.Link onClick={() => navigate('/detail')}>Detail</Nav.Link>
             <Nav.Link onClick={() => navigate('/cart')}>Cart</Nav.Link>
             <Nav.Link onClick={modalOpen}>최근 본상품</Nav.Link>
+            <Nav className='ms-auto'>반가워요 son</Nav>
+
             <Nav.Link>
               {result.isLoading ? 'Loading...' : result.data.name }
             </Nav.Link>
@@ -108,8 +111,6 @@ function App() {
                         alert('there is no more data to display')
                       }
                     })
-
-                  axios.post()
                 }}>
                 더보기
               </button>
@@ -117,7 +118,7 @@ function App() {
             </>
           }
         />
-        <Route path='/detail/:id' element={<Detail shoes={shoes} />} />
+        <Route path='/detail/:id' element={<Detail shoes={shoes} name={'youngjin'} />} />
 
         <Route path='/cart' element={<Cart />} />
         <Route path='*' element={<div>없는 페이지입니다</div>}></Route>

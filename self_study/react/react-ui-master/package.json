@@ -1,0 +1,72 @@
+{
+  "name": "react-do-it-examples",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "0.18.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16.3": "^1.4.1",
+    "moment": "^2.24.0",
+    "next": "^8.1.0",
+    "node-sass": "^4.14",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-test-renderer": "^16.7.0",
+    "react-with-styles": "^3.2.1",
+    "recompose": "^0.30.0",
+    "redux": "^4.1.0",
+    "redux-pack": "^0.1.5",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "selector-action": "^1.1.1",
+    "styled-components": "^5.3.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "predeploy": "yarn build-all",
+    "deploy": "firebase deploy",
+    "build-all": "yarn ssrbuild && yarn build-firebase",
+    "build-firebase": "cd \"./functions\" && yarn --ignore-engines",
+    "ssrbuild": "next build",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "start": "cross-env PORT=8080 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "mockserver": "json-server --watch --delay 500 --port 4000 mock/create.js",
+    "errorserver": "node mock/fake.js",
+    "eject": "react-scripts eject",
+    "prestart": "yarn install"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addons": "^5.2.6",
+    "@storybook/react": "^5.2.6",
+    "aphrodite": "^2.2.3",
+    "babel-loader": "^8.0.5",
+    "json-server": "^0.14.2",
+    "node-sass": "^4.11.0",
+    "prettier": "^2.3.2",
+    "react-with-styles-interface-aphrodite": "^5.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "sass-loader": "^7.1.0",
+    "storybook-addon-jsx": "^7.1.13"
+  }
+}
