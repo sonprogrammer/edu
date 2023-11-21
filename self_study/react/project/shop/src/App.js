@@ -66,7 +66,7 @@ function App() {
             <Nav className='ms-auto'>반가워요 son</Nav>
 
             <Nav.Link>
-              {result.isLoading ? 'Loading...' : result.data.name }
+              {result.isLoading ? 'Loading...' : result.data.email }
             </Nav.Link>
             {/* 이버튼을 클릭하면 모달창이 나와서 보여주는것 */}
           </Nav>
