@@ -1,36 +1,40 @@
-import Side from './Side/Side'
-import './App.css'
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
+import axios from 'axios'
 
-// function App() {
-//   const handleItemClick = (label: string) => {
-//     console.log('메뉴 아이템 클릭:', label);
-//   };
-//   return (
-//     <>
-//   <Side handleItemClick={handleItemClick} />
-//     </>
-//   )
-// }
+const queryClient = new QueryClient()
 
-// export default App
-
-import './App.css'
-import tw from 'twin.macro'
-import styled from 'styled-components'
-
-
-
-
-
-function App() {
-
-
+export default function App() {
   return (
-
-      <Side />
-
+    <QueryClientProvider client={queryClient}>
+      <Example />
+    </QueryClientProvider>
   )
 }
 
+function Example() {
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['repoData'],
+    queryFn: () =>
+      axios.get('https://api.github.com/repos/tannerlinsley/react-query').then(
+        (res) => res.data,
+      ),
+  })
 
-export default App
+  if (isLoading) return 'Loading...'
+
+  if (error) return 'An error has occurred: ' + error.message
+
+  return (
+    <div>
+      <h1>{data.name}</h1>
+      <p>{data.language}</p>
+      <strong>👀 {data.subscribers_count}</strong>{' '}
+      <strong>✨ {data.stargazers_count}</strong>{' '}
+      <strong>🍴 {data.forks_count}</strong>
+    </div>
+  )
+}
