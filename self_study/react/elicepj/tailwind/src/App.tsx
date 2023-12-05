@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { WiDaySunny, WiCloudy } from 'react-icons/wi';
 import axios from 'axios';  // axios import 추가
 import { Container, Title, Lon, Lat, Temp, Weather } from './styles';
+import { NavbarComponent } from './components';
+
 
 function App() {
   const [show, setShow] = useState(false)
@@ -54,21 +56,25 @@ function App() {
   }, []);
 
   return (
+    <>
+    <NavbarComponent/>
     <Container style={{boxSizing: 'border-box',width: '100%', alignItems: 'center', display:'flex', flexDirection:'column', justifyContent:'center', height:'100vh', textAlign:'center'}}>
       <Title onClick={handleclick} style={{alignItems:'center', justifyContent:'center', cursor: 'pointer'}}>Weather App</Title>
       {show && coords && (
         <div>
+          <h1 style={{fontSize: '36px', fontWeight:'bold'}}>my location</h1>
           <Lat>경도: {coords.latitude}</Lat>
           <Lon>위도: {coords.longitude}</Lon>
         </div>
       )}
       {show && temp !== null && weather !== null && (
-        <div>
+        <div style={{marginTop: '24px'}}>
           <Temp>온도: {temp}°C</Temp>
           <Weather>{weather === 'Clear' ? <WiDaySunny style={{ color: 'orange'}}/> : <WiCloudy style={{ color: 'gray'}}/>}</Weather>
         </div>
       )}
     </Container>
+    </>
   );
 }
 
