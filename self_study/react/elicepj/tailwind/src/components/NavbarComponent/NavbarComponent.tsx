@@ -9,7 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-export default function NavbarComponent() {
+
+export default function NavbarComponent({ onSearch, setSearchQuery}) {
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -39,11 +40,12 @@ export default function NavbarComponent() {
           <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="지역 날씨 검색"
               className="me-2"
               aria-label="Search"
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" onClick={onSearch}>Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
