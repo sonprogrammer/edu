@@ -10,7 +10,7 @@ export default function SearchWeatherComponent({ data }) {
         </h1>
         <div>온도: {data.main.temp}°C</div>
         <div>날씨 : 
-            {data.weather[0].main === 'Clear' ? ( <div>맑음</div>) : ( <div>흐림</div>)}
+            {data.weather[0].main === 'Clear' ? ( <span style={{marginLeft: '4px'}}>맑음</span>) : ( <span style={{marginLeft: '4px'}}>흐림</span>)}
             </div>
         <div style={{display: 'flex', textAlign: 'center', justifyContent: 'center'}}>
           {data.weather[0].main === 'Clear' ? (

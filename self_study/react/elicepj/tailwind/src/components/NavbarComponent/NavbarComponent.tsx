@@ -5,12 +5,27 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 
 
 
 
 
 export default function NavbarComponent({ onSearch, setSearchQuery}) {
+
+  const[inputValue, setInputValue] =useState('')
+
+  function handleSubmit(e){
+    e.preventDefault();
+    try{
+
+      onSearch();
+    }catch(err){
+      alert('도시명을 확인해주세요')
+    }
+
+  }
+
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -37,7 +52,7 @@ export default function NavbarComponent({ onSearch, setSearchQuery}) {
               Link
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex" onSubmit={handleSubmit}>
             <Form.Control
               type="search"
               placeholder="지역 날씨 검색"
@@ -45,7 +60,7 @@ export default function NavbarComponent({ onSearch, setSearchQuery}) {
               aria-label="Search"
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <Button variant="outline-success" onClick={onSearch}>Search</Button>
+            <Button variant="outline-success" onClick={onSearch} >Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
