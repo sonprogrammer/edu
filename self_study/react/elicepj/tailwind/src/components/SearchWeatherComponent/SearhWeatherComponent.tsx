@@ -12,11 +12,11 @@ export default function SearchWeatherComponent({ data }) {
         <div>날씨 : 
             {data.weather[0].main === 'Clear' ? ( <div>맑음</div>) : ( <div>흐림</div>)}
             </div>
-        <div>
+        <div style={{display: 'flex', textAlign: 'center', justifyContent: 'center'}}>
           {data.weather[0].main === 'Clear' ? (
-            <WiDaySunny style={{ color: 'orange' }} />
+            <WiDaySunny style={{ color: 'orange',fontSize: '80px' }} />
           ) : (
-            <WiCloudy style={{ color: 'gray' }} />
+            <WiCloudy style={{ color: 'gray',fontSize: '80px'}} />
           )}
         </div>
       </div>
