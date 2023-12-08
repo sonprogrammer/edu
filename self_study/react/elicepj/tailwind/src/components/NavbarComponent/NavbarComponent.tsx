@@ -30,7 +30,7 @@ export default function NavbarComponent({ onSearch, setSearchQuery}) {
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#" style={{fontSize: '32px'}}>Home</Navbar.Brand>
+        <Navbar.Brand href="#" style={{fontSize: '32px', display:'flex'}}><img src='./earth.png' style={{width: '48px', marginRight:'8px'}}/>Earth Weather</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
