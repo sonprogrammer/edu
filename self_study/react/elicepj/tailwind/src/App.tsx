@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { WiDaySunny, WiCloudy } from 'react-icons/wi'
 import axios from 'axios'
 import { Container, Title, Lon, Lat, Temp, Weather } from './styles'
-import { NavbarComponent, SearchWeatherComponent } from './components'
+import { NavbarComponent, SearchWeatherComponent, SideBgComponent } from './components'
 
 function App() {
   const [show, setShow] = useState(false)
@@ -71,10 +71,17 @@ function App() {
 
   return (
     <>
-      <NavbarComponent
-        onSearch={searchWeather}
-        setSearchQuery={setSearchQuery}
-      />
+       <Container
+        style={{
+          boxSizing: 'border-box',
+          width: '100%',
+          display: 'flex',
+        }}
+      >
+        <NavbarComponent style={{ flex: 1 }} />
+        <SideBgComponent onSearch={searchWeather} setSearchQuery={setSearchQuery} />
+      </Container>
+     
       <Container
         style={{
           boxSizing: 'border-box',
@@ -86,6 +93,7 @@ function App() {
           height: '100vh',
           textAlign: 'center',
         }}>
+
         <Title
           onClick={handleclick}
           style={{
