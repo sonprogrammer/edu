@@ -26,4 +26,4 @@ export default function SideBgComponent({ onSearch, setSearchQuery}){
             </Form>
         </div>
     )
-}
+}    
