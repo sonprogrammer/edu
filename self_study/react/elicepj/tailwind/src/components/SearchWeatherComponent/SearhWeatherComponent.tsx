@@ -2,6 +2,7 @@ import React from 'react'
 import { WiDaySunny, WiCloudy } from 'react-icons/wi'
 
 export default function SearchWeatherComponent({ data }) {
+  const icon = data.weather[0].icon
   return (
     <>
       <div style={{ marginTop: '24px' }}>
@@ -10,14 +11,12 @@ export default function SearchWeatherComponent({ data }) {
         </h1>
         <div>온도: {data.main.temp}°C</div>
         <div>날씨 : 
-            {data.weather[0].main === 'Clear' ? ( <span style={{marginLeft: '4px'}}>맑음</span>) : ( <span style={{marginLeft: '4px'}}>흐림</span>)}
+            {data.weather[0].main}
+            {/* === 'Clear' ? ( <span style={{marginLeft: '4px'}}>맑음</span>) : ( <span style={{marginLeft: '4px'}}>흐림</span>)} */}
             </div>
         <div style={{display: 'flex', textAlign: 'center', justifyContent: 'center'}}>
-          {data.weather[0].main === 'Clear' ? (
-            <WiDaySunny style={{ color: 'orange',fontSize: '80px' }} />
-          ) : (
-            <WiCloudy style={{ color: 'gray',fontSize: '80px'}} />
-          )}
+          <img className="img-fluid" src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
+
         </div>
       </div>
     </>

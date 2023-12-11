@@ -11,6 +11,7 @@ function App() {
   const [weather, setWeather] = useState(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [searchedWeather, setSearchedWeather] = useState(null)
+  const [icon, setIcon] = useState(null)
 
   function handleclick() {
     setShow(!show)
@@ -41,12 +42,16 @@ function App() {
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=794adddae058bc0ae849863608c95080&units=metric`
       )
       const data = response.data
-      console.log(data)
+      console.log('hi',data)
 
       const temperature = data.main.temp
       const weatherType = data.weather[data.weather.length - 1].main
+      const weatherIcon = data.weather.icon
+      setIcon(weatherIcon)
+      console.log('icon',icon)
       setTemp(temperature)
       setWeather(weatherType)
+      return data;
     } catch (error) {
       console.error('Error fetching weather data:', error)
     }
@@ -116,13 +121,7 @@ function App() {
           <div style={{ marginTop: '24px' }}>
             <Temp>온도: {temp}°C</Temp>
             <Weather>
-              {weather === 'Clear' && (
-                <WiDaySunny style={{ color: 'orange' }} />
-              ) 
-              // : (
-              //   <WiCloudy style={{ color: 'gray' }} />
-              // )
-              }
+             <img className="img-fluid" src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
             </Weather>
           </div>
         )}
