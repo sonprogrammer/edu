@@ -42,13 +42,11 @@ function App() {
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=794adddae058bc0ae849863608c95080&units=metric`
       )
       const data = response.data
-      console.log('hi',data)
 
       const temperature = data.main.temp
       const weatherType = data.weather[data.weather.length - 1].main
-      const weatherIcon = data.weather.icon
+      const weatherIcon = data.weather[0].icon
       setIcon(weatherIcon)
-      console.log('icon',icon)
       setTemp(temperature)
       setWeather(weatherType)
       return data;
@@ -63,7 +61,6 @@ function App() {
         `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=794adddae058bc0ae849863608c95080&units=metric`
       )
       const data = response.data
-      console.log(data)
       setSearchedWeather(data)
     } catch (error) {
       alert('도시명을 확인해주세요')
