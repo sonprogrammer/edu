@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export default function NavbarComponent() {
 
   return (
-    <>
+    <> 
       <Navbar expand='lg' className='bg-body-tertiary' style={{width: '50%'}}>
         <Container fluid>
           <Navbar.Brand href='#' style={{ fontSize: '32px', display: 'flex' }}>
