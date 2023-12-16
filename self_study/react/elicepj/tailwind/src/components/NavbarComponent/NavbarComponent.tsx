@@ -16,7 +16,7 @@ export default function NavbarComponent() {
             Earth Weather
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbarScroll' />
-        </Container>
+        </Container>   
       </Navbar>
     </>
   )
