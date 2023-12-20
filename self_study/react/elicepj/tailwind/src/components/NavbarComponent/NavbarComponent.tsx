@@ -13,7 +13,7 @@ export default function NavbarComponent() {
               src='./earth.png'
               style={{ width: '48px', marginRight: '8px' }}
             />
-            Earth Weather like
+            Earth Weather like🌈
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbarScroll' />
         </Container>   
