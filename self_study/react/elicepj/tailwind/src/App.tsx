@@ -122,7 +122,8 @@ function App() {
             </Weather>
           </div>
         )}
-        {searchedWeather && <SearchWeatherComponent data={searchedWeather} />}
+        {searchedWeather && <SearchWeatherComponent data={searchedWeather} />
+        }  
       </Container>
     </>
   )
