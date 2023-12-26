@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@craco/craco": "^7.1.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@types/styled-components": "^5.1.30",
+    "antd": "^5.11.1",
+    "react-router-dom": "^6.18.0",
+    "styled-components": "^6.1.1",
+    "tsc-watch": "^6.0.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.22.15",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.2.1",
+    "autoprefixer": "^9",
+    "babel-plugin-macros": "^3.1.0",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "twin.macro": "^3.4.0",
+    "typescript": "^5.2.2"
+  }
+}
