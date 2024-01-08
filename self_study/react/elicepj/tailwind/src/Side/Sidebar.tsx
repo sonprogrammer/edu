@@ -10,13 +10,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 
-export function Sidebar(){
+// export function Sidebar(){
 
-    return(
+//     return(
         
-    )
-}
-
+//     )
+// }
 
 function SidebarContents(){
     const [isOpen, setIsOpen] = useState(false)

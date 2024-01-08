@@ -103,9 +103,9 @@ function App() {
             justifyContent: 'center',
             cursor: 'pointer',
           }}>
-          Weather App
+          my weather
         </Title>
-        {show && coords && (
+        {/* {show && coords && (
           <div>
             <h1 style={{ fontSize: '36px', fontWeight: 'bold' }}>
               my location
@@ -113,7 +113,7 @@ function App() {
             <Lat>경도: {coords.latitude}</Lat>
             <Lon>위도: {coords.longitude}</Lon>
           </div>
-        )}
+        )} */}
         {show && temp !== null && weather !== null && (
           <div style={{ marginTop: '24px' }}>
             <Temp>온도: {temp}°C</Temp>
