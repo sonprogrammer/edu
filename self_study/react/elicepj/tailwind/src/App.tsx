@@ -12,8 +12,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
   const [searchedWeather, setSearchedWeather] = useState(null)
   const [icon, setIcon] = useState(null)
-
-  const REVERSE_GEOCODING_API_URL = 'https://api.openweathermap.org/data/2.5/reverse?';
+  const [city, setCity] = useState(null)
 
 
   function handleclick() {
@@ -46,20 +45,14 @@ function App() {
       )
       const data = response.data
 
-      const reverseGeocodingResponse = await axios.get(
-        `${REVERSE_GEOCODING_API_URL}lat=${lat}&lon=${lon}&appid=794adddae058bc0ae849863608c95080`
-      );
-      const addressData = reverseGeocodingResponse.data;
-
       const temperature = data.main.temp
       const weatherType = data.weather[data.weather.length - 1].main
       const weatherIcon = data.weather[0].icon
+      const myCity = data.name
       setIcon(weatherIcon)
       setTemp(temperature)
       setWeather(weatherType)
-
-      console.log('my location', addressData)
-
+      setCity(myCity)
       return data;
     } catch (error) {
       console.error('Error fetching weather data:', error)
@@ -118,12 +111,12 @@ function App() {
         </Title>
         {show && coords && (
           <div>
-            <h1 style={{ fontSize: '36px', fontWeight: 'bold' }}>
+            {/* <h1 style={{ fontSize: '36px', fontWeight: 'bold' }}>
               my location
-            </h1>
-            <Lat>경도: {coords.latitude}</Lat>
-            <Lon>위도: {coords.longitude}</Lon>
-            <Lon>위도: {coords.timezone}</Lon>
+            </h1> */}
+            {/* <Lat>경도: {coords.latitude}</Lat>
+            <Lon>위도: {coords.longitude}</Lon> */}
+            <h1 style={{ fontSize: '36px', fontWeight: 'bold'}}>city : {city}</h1>
           </div>
         )}
         {show && temp !== null && weather !== null && (

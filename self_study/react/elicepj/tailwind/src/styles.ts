@@ -29,7 +29,7 @@ export const Lat = styled.div`
 `
 export const Temp = styled.div`
     ${tw`
-        text-3xl
+        text-2xl
         mb-3
         font-bold
     `}
