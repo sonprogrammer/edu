@@ -100,6 +100,16 @@ function App() {
           textAlign: 'center',
         }}>
 
+        {show ? <Title
+          onClick={handleclick}
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            color: 'red'
+          }}>
+          Close my weather
+        </Title> :
         <Title
           onClick={handleclick}
           style={{
@@ -107,8 +117,8 @@ function App() {
             justifyContent: 'center',
             cursor: 'pointer',
           }}>
-          my weather
-        </Title>
+          See my weather
+        </Title> }
         {show && coords && (
           <div>
             {/* <h1 style={{ fontSize: '36px', fontWeight: 'bold' }}>
