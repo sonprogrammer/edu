@@ -1,6 +1,7 @@
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+
 export default function SideBgComponent({ onSearch, setSearchQuery}){
     function handleSubmit(e) {
         e.preventDefault()
@@ -16,7 +17,7 @@ export default function SideBgComponent({ onSearch, setSearchQuery}){
               <Form.Control
                 type='search'
                 placeholder='Search Location...'
-                className='me-2'
+                className='me-2 flex-grow-1'
                 aria-label='Search'
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -24,6 +25,7 @@ export default function SideBgComponent({ onSearch, setSearchQuery}){
                 Search
               </Button>
             </Form>
+         
         </div>
     )
 }    
