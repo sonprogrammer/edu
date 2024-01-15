@@ -8,7 +8,7 @@ export default function SideBgComponent({ onSearch, setSearchQuery}){
         try {
           onSearch()
         } catch (err) {
-          alert('도시명을 확인해주세요')
+          alert('도시명을 확인해주세요!')
         }
       }
     return (
