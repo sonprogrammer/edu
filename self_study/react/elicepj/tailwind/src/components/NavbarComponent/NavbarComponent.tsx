@@ -12,6 +12,7 @@ export default function NavbarComponent() {
             <img
               src='./earth.png'
               style={{ width: '48px', marginRight: '8px' }}
+              title='home'
             />
             Earth Weather like🌈
           </Navbar.Brand>
