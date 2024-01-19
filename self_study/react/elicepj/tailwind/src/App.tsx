@@ -121,12 +121,7 @@ function App() {
         </Title> }
         {show && coords && (
           <div>
-            {/* <h1 style={{ fontSize: '36px', fontWeight: 'bold' }}>
-              my location
-            </h1> */}
-            {/* <Lat>경도: {coords.latitude}</Lat>
-            <Lon>위도: {coords.longitude}</Lon> */}
-            <h1 style={{ fontSize: '36px', fontWeight: 'bold'}}>내 위치 : {city}</h1>
+            <h1 style={{ fontSize: '36px', fontWeight: 'bold'}}>my location : {city}</h1>
           </div>
         )}
         {show && temp !== null && weather !== null && (
