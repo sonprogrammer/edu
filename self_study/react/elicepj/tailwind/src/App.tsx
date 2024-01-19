@@ -126,7 +126,7 @@ function App() {
         )}
         {show && temp !== null && weather !== null && (
           <div style={{ marginTop: '24px' }}>
-            <Temp>온도: {temp}°C</Temp>
+            <Temp>temp: {temp}°C</Temp>
             <Weather>
              <img className="img-fluid" src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
             </Weather>
