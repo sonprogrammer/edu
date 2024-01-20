@@ -1,0 +1,29 @@
+#todo-list{
+    width: 100%;
+    height: auto;
+    position: relative;
+    min-height: 360px;
+}
+
+#todo-list li{
+    margin-bottom: 8px;
+}
+
+#todo-list li span{
+    display:  inline-block;
+    min-width: 240px;
+}
+
+#todo-list li.completed span{
+    text-decoration: line-through;
+}
+
+#create{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+#create input{
+    width: 360px;
+}
