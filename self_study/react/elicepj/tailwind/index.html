@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>날씨</title>
+    <link rel="icon" href="./favicon.png">
+    <style>
+      .weather-icon::before {
+        content: '\f0e7'; /* FontAwesome cloud-bolt 아이콘의 유니코드 */
+        font-family: 'Font Awesome Duotone';
+        margin-right: 5px;
+      }
+      </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
