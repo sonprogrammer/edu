@@ -91,3 +91,34 @@ function subject(a:{sub: string | string[]}): string{
 }
 
 console.log(subject({sub : ['enl', 'art']}))
+
+
+type a ={
+    color?: string,
+    size: number,
+    readonly position: number[]
+}
+
+let test: a = {
+    size: 12,
+    position: [1, 2,3]
+}
+
+type b = {
+    name : string,
+    phone : string,
+    email : string
+}
+
+type c = {
+    adult: boolean
+}
+
+type Newa = b & c;
+
+let Memer : Newa = {
+    name : 'son',
+    phone: '010-23',
+    adult : false,
+    email: 'son@'
+}

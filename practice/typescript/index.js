@@ -68,3 +68,13 @@ function subject(a) {
     }
 }
 console.log(subject({ sub: ['enl', 'art'] }));
+var test = {
+    size: 12,
+    position: [1, 2, 3]
+};
+var Memer = {
+    name: 'son',
+    phone: '010-23',
+    adult: false,
+    email: 'son@'
+};
