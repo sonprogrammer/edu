@@ -19,3 +19,25 @@ $(function () {
         $(this).parent("li").remove()
     })
 })
+
+
+function user(){
+    this.firstName = 'sonar',
+    this.lastName = 'dean'
+    return{
+        firstName: 'kim',
+        lastName: 'min',
+        age:32,
+        // getFullName: () =>{
+        //     console.log(`${this.firstName} ${this.lastName}`)
+        getFullName: function() {
+            console.log(`${this.firstName} ${this.lastName}`)
+            setTimeout(() => {
+                console.log(`${this.firstName} ${this.lastName}`)
+            }, 1000);
+        }
+    }
+}
+
+const u = user()
+console.log(u.getFullName()) 
