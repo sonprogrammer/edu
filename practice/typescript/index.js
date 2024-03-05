@@ -176,3 +176,24 @@ function hey(_a) {
     var a = _a[0], b = _a[1], c = _a[2];
     console.log(a, b, c);
 }
+var User = /** @class */ (function () {
+    function User(a) {
+        this.name = a;
+    }
+    return User;
+}());
+var user1 = new User('park');
+user1.name = 'hi';
+var User1 = /** @class */ (function () {
+    function User1() {
+    }
+    User1.addOne = function (a) {
+        return User1.x + a;
+    };
+    User1.x = 10;
+    User1.y = 20;
+    return User1;
+}());
+// let add = new User1();
+// console.log(add.addOne(3))
+User1.addOne(3);

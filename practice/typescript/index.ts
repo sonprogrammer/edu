@@ -258,3 +258,26 @@ function hey([a, b,c]:mix){
 }
 
 
+class User{
+    public name;
+    constructor(a){
+        this.name = a
+    }
+}
+
+let user1 = new User('park')
+user1.name = 'hi'
+
+class User1{
+    private static x = 10;
+    public static y = 20;
+    static addOne(a : number){
+        return User1.x + a;
+    }
+}
+
+// let add = new User1();
+// console.log(add.addOne(3))
+
+User1.addOne(3)
+
