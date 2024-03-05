@@ -122,3 +122,21 @@ let Memer : Newa = {
     adult : false,
     email: 'son@'
 }
+
+function rsp(a : '가위' | '바위' | '보') :('가위' | '바위' | '보')[]{
+    return ['가위']
+}
+
+rsp('가위')
+
+let 자료 = {
+     name: 'kim'
+}
+
+function ma(a: 'kim'){
+
+}
+
+ma('kim')
+
+

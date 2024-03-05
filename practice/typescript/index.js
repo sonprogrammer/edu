@@ -78,3 +78,13 @@ var Memer = {
     adult: false,
     email: 'son@'
 };
+function rsp(a) {
+    return ['가위'];
+}
+rsp('가위');
+var 자료 = {
+    name: 'kim'
+};
+function ma(a) {
+}
+ma('kim');
