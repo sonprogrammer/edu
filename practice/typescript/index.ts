@@ -206,4 +206,35 @@ console.log(obj.str)
 
 
 
-} 
+interface item {
+    brand: string
+    serialNumber: number
+    model: string[]
+}
+
+interface cart {
+    item : string
+    price : number
+}
+
+let 장바구니 : cart[] = [{item : 'vaccum', price: 3000}, {item : 'water', price: 100}]
+
+interface card extends cart{
+    card: boolean
+}
+
+
+interface MathObj{
+    plus: (a: number, b: number) => number
+    minus: (a: number, b: number) => number
+}
+
+let math: MathObj = {
+    plus(a, b){
+        return a + b
+    } 
+    ,
+    minus(a, b){
+        return a - b
+    }
+}

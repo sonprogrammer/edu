@@ -151,3 +151,12 @@ var Word = /** @class */ (function () {
 var obj = new Word('kim', 3, 7, 'son');
 console.log(obj.num);
 console.log(obj.str);
+var 장바구니 = [{ item: 'vaccum', price: 3000 }, { item: 'water', price: 100 }];
+var math = {
+    plus: function (a, b) {
+        return a + b;
+    },
+    minus: function (a, b) {
+        return a - b;
+    }
+};
