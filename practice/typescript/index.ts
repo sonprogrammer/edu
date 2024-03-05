@@ -165,3 +165,45 @@ if(link instanceof HTMLAnchorElement){
 
 
 
+class Car {
+    model: string = 'sonata'
+    price: number = 3000
+
+    constructor(a:string, b:number){
+        this.model= a
+        this.price = b
+    }
+    
+    tax() :number {
+        return this.price /10
+    } 
+}
+
+
+class Word{
+    num;
+    str;
+
+    constructor(...parms : (number | string)[]){
+        let numbers :number[] = [];
+        let strings : string[] =[];
+
+        parms.forEach((i)=>{
+            if(typeof i === 'string'){
+                strings.push(i)
+            }else{
+                numbers.push(i)
+            }
+        })
+        this.num = numbers
+        this.str = strings
+    }
+}
+
+let obj = new Word('kim', 3, 7, 'son')
+console.log(obj.num)
+console.log(obj.str)
+
+
+
+} 

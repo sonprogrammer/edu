@@ -115,3 +115,39 @@ var link = document.querySelector('#link');
 if (link instanceof HTMLAnchorElement) {
     link.href = 'http://kakao.com';
 }
+var Car = /** @class */ (function () {
+    function Car(a, b) {
+        this.model = 'sonata';
+        this.price = 3000;
+        this.model = a;
+        this.price = b;
+    }
+    Car.prototype.tax = function () {
+        return this.price / 10;
+    };
+    return Car;
+}());
+var Word = /** @class */ (function () {
+    function Word() {
+        var parms = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            parms[_i] = arguments[_i];
+        }
+        var numbers = [];
+        var strings = [];
+        parms.forEach(function (i) {
+            if (typeof i === 'string') {
+                strings.push(i);
+            }
+            else {
+                numbers.push(i);
+            }
+        });
+        this.num = numbers;
+        this.str = strings;
+    }
+    return Word;
+}());
+var obj = new Word('kim', 3, 7, 'son');
+console.log(obj.num);
+console.log(obj.str);
