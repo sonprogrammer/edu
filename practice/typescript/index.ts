@@ -238,3 +238,23 @@ let math: MathObj = {
         return a - b
     }
 }
+ 
+
+function count(...a){
+    a.map((i)=>{
+        if(i > 3){
+            console.log(i)
+        }
+    })
+}
+
+count(1,  2, 1, 3, 4,5)
+
+
+type mix = (number | string | boolean)[]
+
+function hey([a, b,c]:mix){
+    console.log(a,b,c)
+}
+
+

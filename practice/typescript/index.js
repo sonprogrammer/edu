@@ -160,3 +160,19 @@ var math = {
         return a - b;
     }
 };
+function count() {
+    var a = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        a[_i] = arguments[_i];
+    }
+    a.map(function (i) {
+        if (i > 3) {
+            console.log(i);
+        }
+    });
+}
+count(1, 2, 1, 3, 4, 5);
+function hey(_a) {
+    var a = _a[0], b = _a[1], c = _a[2];
+    console.log(a, b, c);
+}
