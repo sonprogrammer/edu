@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+/*eslint-disable */
+
+import { useState } from 'react'
 import './App.css';
 
 function App() {
+
+  let [title, setTitle] = useState(['men coat', 'women coat', "kid's coat"])
+  let [like, setLike] = useState(0)
+
+  function likebtn(){
+    setLike(like+1)
+  }
+
+  function sortbtn(){
+    let copy = [...title]
+    copy.sort()
+    setTitle(copy)
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="black-nav">
+        <h4>Blog</h4>
+      </div>
+      <button onClick={sortbtn}>sort</button>
+        {title.map((i) => (          
+          <div className="list">
+            <h4>{i} <span onClick={likebtn}>👍🏿</span> {like}</h4>
+            <p>date</p>
+          </div>
+        ))}
     </div>
   );
 }
