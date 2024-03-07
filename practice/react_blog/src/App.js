@@ -14,6 +14,7 @@ function App() {
   let [selectedTitle, setSelectedTitle] = useState(null)
   let [title, setTitle] = useState(0)
   let [input, setInput] = useState('')
+  let [date, setDate] = useState(new Date().toLocaleDateString())
 
   function likebtn(i) {
     let copy = [...titles]
@@ -43,9 +44,11 @@ function App() {
             </span>{' '}
             {a.likes}
           </h4>
-          <p>date</p>
+          <p>{date}</p>
           <button onClick={()=>{
-
+            let copy = [...titles]
+            copy.splice(i, 1)
+            setTitles(copy)
           }}>삭제</button>
         </div>
       ))}
@@ -54,7 +57,9 @@ function App() {
 
       <input onChange={(e) => {setInput(e.target.value)}} />
       <button onClick={()=>{
-        setTitles([{text: input, likes: 0}, ...titles])
+        {
+          input === '' ? alert('there is nothing') : setTitles([{text: input, likes: 0}, ...titles])
+        }
 
       }}>button</button>
     </div>
