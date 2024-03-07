@@ -44,6 +44,9 @@ function App() {
             {a.likes}
           </h4>
           <p>date</p>
+          <button onClick={()=>{
+
+          }}>삭제</button>
         </div>
       ))}
 
