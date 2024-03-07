@@ -5,11 +5,18 @@ import './App.css';
 
 function App() {
 
-  let [title, setTitle] = useState(['men coat', 'women coat', "kid's coat"])
+  let [titles, setTitles] = useState([
+    { text: 'men coat', likes: 0 },
+    { text: 'women coat', likes: 0 },
+    { text: "kid's coat", likes: 0 },
+  ]);
   let [like, setLike] = useState(0)
+  let [modal, setModal] = useState(false)
 
-  function likebtn(){
-    setLike(like+1)
+  function likebtn(i){
+    let copy = [...titles]
+    copy[i].likes += 1
+    setTitles(copy)
   }
 
   function sortbtn(){
@@ -24,14 +31,28 @@ function App() {
         <h4>Blog</h4>
       </div>
       <button onClick={sortbtn}>sort</button>
-        {title.map((i) => (          
-          <div className="list">
-            <h4>{i} <span onClick={likebtn}>👍🏿</span> {like}</h4>
+        {titles.map((a,i) => (          
+          <div className="list" onClick={()=>setModal(!modal)}>
+            <h4>{a.text} <span onClick={()=>likebtn(i)}>👍🏿</span> {a.likes}</h4>
             <p>date</p>
           </div>
         ))}
+
+        {
+         modal == true ?  <Modal /> : null
+        }
     </div>
   );
 }
 
 export default App;
+
+function Modal(){
+  return(
+    <div className='modal'>
+      <h4>title</h4>
+      <p>date</p>
+      <p>detail</p>
+    </div>
+  )
+}
