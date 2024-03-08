@@ -42,7 +42,7 @@ function App() {
             </>
           }
         />
-        <Route path='/detail' element={<Detail />} />
+        <Route path='/detail/:id' element={<Detail shoes={shoes} />} />
         <Route path='*' element={<div>there is no page</div>} />
       </Routes>
     </div>
@@ -60,7 +60,7 @@ function Card({ shoes, i }) {
         alt='1'
       />
       <h4>{shoes.title}</h4>
-      <p>{shoes.price}</p>
+      <p>{shoes.price}won</p>
     </div>
   )
 }
