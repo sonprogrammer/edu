@@ -1,54 +1,70 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { Nav } from 'react-bootstrap'
 
-function Detail({shoes}) {
-
+function Detail({ shoes }) {
   let [alert, setAlert] = useState(true)
-  let [num, setNum] = useState('')
+  let [content, setContent] = useState(0)
 
-  useEffect(()=>{
-    if(isNaN(num)==true){
-      console.log("don't type string")
-    }
-    console.log(num)
-  },[num])
-  
-  useEffect(()=>{
-    setTimeout(() => {
-      setAlert(false)
-    }, 2000);
-  },)
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setAlert(false)
+  //   }, 2000)
+  // })
 
-
-  let {id} = useParams();
-  let item = shoes.find((x)=>{
-    return x.id == id;
+  let { id } = useParams()
+  let item = shoes.find((x) => {
+    return x.id == id
   })
 
-    return (
-      <div className='container'>
-        {
-          alert ? <div className="alert alert-warning">
-          2초이내 구매시 할인
-        </div> : null
-        }
-        <div className='row'>
-          <div className='col-md-6'>
-            <img
-              src="https://codingapple1.github.io/shop/shoes1.jpg"
-              width='100%'
-              alt="1"
-            />
-          </div>
-          <div className='col-md-6'>
-            <input onChange={(e)=>setNum(e.target.value)} />
-            <h4 className='pt-5'>{item.title}</h4>
-            <p>{item.content}</p>
-            <p>{item.price}원</p>
-            <button className='btn btn-danger'>주문하기</button>
-          </div>
+  return (
+    <div className='container'>
+      {/* {alert ? (
+        <div className='alert alert-warning'>2초이내 구매시 할인</div>
+      ) : null} */}
+      <div className='row'>
+        <div className='col-md-6'>
+          <img
+            src='https://codingapple1.github.io/shop/shoes1.jpg'
+            width='100%'
+            alt='1'
+          />
+        </div>
+        <div className='col-md-6'>
+          <h4 className='pt-5'>{item.title}</h4>
+          <p>{item.content}</p>
+          <p>{item.price}원</p>
+          <button className='btn btn-danger'>주문하기</button>
         </div>
       </div>
-    )
+
+      <Nav variant='tabs' defaultActiveKey='link0'>
+        <Nav.Item>
+          <Nav.Link eventKey='link0' onClick={()=>{setContent(0)}}>버튼0</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey='link1' onClick={()=>{setContent(1)}}>버튼1</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey='link2' onClick={()=>{setContent(2)}}>버튼2</Nav.Link>
+        </Nav.Item>
+      </Nav>
+
+
+      <TabContent content={content}/>
+    </div>
+  )
+}
+
+
+export default Detail
+
+function TabContent({content}){
+  if(content == 0){
+   return <div>내용0</div>
+  }else if(content == 1){
+    return <div>내용1</div>
+  }else if(content == 2){
+    return <div>내용2</div>
   }
-  export default Detail
+}

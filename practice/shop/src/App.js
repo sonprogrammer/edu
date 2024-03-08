@@ -7,6 +7,7 @@ import { useState } from 'react'
 import data from './data'
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
 import Detail  from './routes/Detail'
+import axios from 'axios'
 
 function App() {
   const [shoes, setShoes] = useState(data)
@@ -39,12 +40,21 @@ function App() {
                   ))}
                 </div>
               </div>
+              <button onClick={()=>{
+                axios.get('https://codingapple1.github.io/shop/data2.json')
+                  .then((res)=>{console.log(res.data)
+                    let copy = [...shoes, ...res.data]
+                    setShoes(copy)
+                  })
+                  .catch((err)=>{alert('Error')})
+              }}>more</button>
             </>
           }
         />
         <Route path='/detail/:id' element={<Detail shoes={shoes} />} />
         <Route path='*' element={<div>there is no page</div>} />
       </Routes>
+
     </div>
   )
 }
