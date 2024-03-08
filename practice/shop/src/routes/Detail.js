@@ -67,4 +67,5 @@ function TabContent({content}){
   }else if(content == 2){
     return <div>내용2</div>
   }
+  // [<div>내용0</div>,<div>내용1</div>,<div>내용2</div>][content]
 }
