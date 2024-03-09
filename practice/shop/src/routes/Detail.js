@@ -5,20 +5,23 @@ import { Nav } from 'react-bootstrap'
 function Detail({ shoes }) {
   let [alert, setAlert] = useState(true)
   let [content, setContent] = useState(0)
+  let [fade2, setFade2] = useState('')
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setAlert(false)
-  //   }, 2000)
-  // })
 
   let { id } = useParams()
   let item = shoes.find((x) => {
     return x.id == id
   })
 
+  useEffect(()=>{
+    setFade2('end')
+    return()=>{
+      setFade2('')
+    }
+  },[])
+
   return (
-    <div className='container'>
+    <div className={'container start ' + fade2}>
       {/* {alert ? (
         <div className='alert alert-warning'>2초이내 구매시 할인</div>
       ) : null} */}
@@ -60,12 +63,28 @@ function Detail({ shoes }) {
 export default Detail
 
 function TabContent({content}){
-  if(content == 0){
-   return <div>내용0</div>
-  }else if(content == 1){
-    return <div>내용1</div>
-  }else if(content == 2){
-    return <div>내용2</div>
-  }
-  // [<div>내용0</div>,<div>내용1</div>,<div>내용2</div>][content]
+  // if(content == 0){
+  //  return <div>내용0</div>
+  // }else if(content == 1){
+  //   return <div>내용1</div>
+  // }else if(content == 2){
+  //   return <div>내용2</div>
+  // }
+
+  let [fade, setFade] = useState('')
+
+  useEffect(()=>{
+    setTimeout(() => {
+      setFade('end')
+    }, 100);
+    return()=>{
+      setFade('')
+    }
+  },[content])
+  
+  return (
+    <div className={'start ' + fade}>
+      {[<div>내용0</div>,<div>내용1</div>,<div>내용2</div>][content]}
+    </div>
+  )
 }
