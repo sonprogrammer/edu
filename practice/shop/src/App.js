@@ -3,14 +3,17 @@ import './App.css'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import data from './data'
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
 import Detail  from './routes/Detail'
 import axios from 'axios'
 
+export let context = createContext()
+
 function App() {
   const [shoes, setShoes] = useState(data)
+  let  [stock, setStock] = useState([10,11,12])
 
   let navigate = useNavigate()
 
@@ -51,7 +54,11 @@ function App() {
             </>
           }
         />
-        <Route path='/detail/:id' element={<Detail shoes={shoes} />} />
+        <Route path='/detail/:id' element={
+          <context.Provider value={{ stock, shoes }}>
+            <Detail shoes={shoes} />
+          </context.Provider>
+          } />
         <Route path='*' element={<div>there is no page</div>} />
       </Routes>
 

@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Nav } from 'react-bootstrap'
+import {context} from '../App'
 
 function Detail({ shoes }) {
   let [alert, setAlert] = useState(true)
   let [content, setContent] = useState(0)
   let [fade2, setFade2] = useState('')
 
+  let {stock} = useContext(context)
 
   let { id } = useParams()
   let item = shoes.find((x) => {
@@ -72,6 +74,7 @@ function TabContent({content}){
   // }
 
   let [fade, setFade] = useState('')
+  let { shoes } = useContext(context)
 
   useEffect(()=>{
     setTimeout(() => {
