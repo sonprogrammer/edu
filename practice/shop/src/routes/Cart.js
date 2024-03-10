@@ -22,7 +22,6 @@ export default function Cart() {
           <td>{a.cart[i].id}</td>
           <td>{a.cart[i].name}</td>
           <td>{a.cart[i].count}</td>
-          <td>안녕</td>
         </tr>
         )}
       </tbody>
