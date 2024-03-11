@@ -10,12 +10,25 @@ function Detail({ shoes }) {
   let [fade2, setFade2] = useState('')
 
   let dispatch = useDispatch()
-
-
+  
   let { id } = useParams()
   let item = shoes.find((x) => {
     return x.id == id
   })
+  console.log('item', item)
+
+
+  useEffect(() => {
+    let 꺼낸거 = localStorage.getItem('watched');
+    꺼낸거 = JSON.parse(꺼낸거);
+    꺼낸거.push(item.id);
+    꺼낸거 = new Set(꺼낸거) // new Set()함수로 중복된것을 삭제함
+    꺼낸거 = Array.from(꺼낸거) //new Set()함수로 만들어진걸 다시 배열로 만듦
+    localStorage.setItem('watched', JSON.stringify(꺼낸거));
+  }, []);
+  
+
+
 
   useEffect(()=>{
     setFade2('end')
