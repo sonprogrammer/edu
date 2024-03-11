@@ -30,13 +30,26 @@ let cart = createSlice({
         {id : 2, name : 'Grey Yordan', count : 1}
       ] ,
     reducers:{
-        plusCount(state,a){
-            state[a.payload].count++;
-        }
+        plusCount(state,action){
+            let number = state.findIndex((a)=>{return a.id == action.payload})
+            state[number].count++;
+        },
+        addItem(state, action) {
+            const orderItem = action.payload
+            const existingItem = state.find((a) => a.id === action.payload.id)
+            
+            if(existingItem){
+              existingItem.count += 1
+            }else{
+              return [...state, addItem]
+      
+            }
+            //id값이 하나더 cart에 존재한다면 수량만 증가시켜라
+          }
     }
 })
 
-export let { plusCount } = cart.actions
+export let { plusCount,addItem } = cart.actions
 
 export default configureStore({
   reducer: { 
