@@ -2,7 +2,16 @@ import { Table } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { changeName, increase, plusCount } from '../store'
 
+
+function Child(){
+    console.log('re-rendering')
+    return(
+        <div>i am child</div>
+    )
+}
+
 export default function Cart() {
+
 
     let a = useSelector((state)=>{ return state})
     console.log(a.cart)
@@ -11,6 +20,10 @@ export default function Cart() {
 
   return (
     <>
+    <div>
+        <Child></Child>
+        <button onClick={()=>{}}></button>
+    </div>
     <h6>{a.user.name} {a.user.age}</h6>
     <button onClick={()=>{
         dispatch(increase(100))
