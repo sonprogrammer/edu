@@ -1,0 +1,53 @@
+{
+  "name": "redux-pack",
+  "version": "0.1.5",
+  "description": "Sensible promise handling and middleware for redux",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "test": "npm run lint",
+    "lint": "eslint ./",
+    "build": "babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lelandrichardson/redux-pack.git"
+  },
+  "keywords": [
+    "redux",
+    "middleware",
+    "promise",
+    "async",
+    "normalize",
+    "normalizr",
+    "react"
+  ],
+  "author": "Leland Richardson <leland.m.richardson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lelandrichardson/redux-pack/issues"
+  },
+  "homepage": "https://github.com/lelandrichardson/redux-pack#readme",
+  "peerDependencies": {
+    "redux": "*"
+  },
+  "dependencies": {
+    "deline": "^1.0.4",
+    "invariant": "^2.2.2",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.20.0",
+    "babel-eslint": "^6.1.0",
+    "babel-preset-react-native": "^1.9.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-prefer-object-spread": "^1.0.0",
+    "eslint-plugin-react": "^6.8.0",
+    "normalizr": "^2.3.0",
+    "redux": "^3.6.0"
+  }
+}
