@@ -11,3 +11,4 @@ const Square = ({onClick, value}) => {
 }
 
 export default Square;
+
