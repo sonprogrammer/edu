@@ -8,7 +8,7 @@ export default function SummaryPage() {
         <input type="checkbox"
         checked={checked}
         id='confirm-checkbox'
-        onClick={(e)=> setChecked(e.target.checked)}
+        onChange={(e)=> setChecked(e.target.checked)}
          />{" "}
          <label htmlFor="confirm-checkbox">주문하려는 것을 확인하셨나요?</label>
          <br />
